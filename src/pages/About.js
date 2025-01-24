@@ -235,8 +235,8 @@ function About() {
               </p>
               
               <p>
-                We believe that data tells a story, and our role is to help organizations uncover that story 
-                to make informed decisions, improve program effectiveness, and maximize their impact.
+                We believe that data tells a story and our role is to help organizations uncover that story 
+                to make informed decisions, improve program effectiveness and maximize their impact.
               </p>
             </div>
           </TextContent>
@@ -267,13 +267,13 @@ function About() {
               <li>Drive sustainable change by aligning strategies with global standards and stakeholder priorities.</li>
             </ul>
             <p>
-              We work collaboratively with clients worldwide to ensure their programs are effective, inclusive, and impactful.
+              We work collaboratively with clients worldwide to ensure their programs are effective, inclusive and impactful.
             </p>
 
             <h3>Our Vision</h3>
             <p>
               To be a global leader in empowering organizations with data-driven solutions, fostering 
-              accountability, and driving sustainable development through innovative research, monitoring, 
+              accountability and driving sustainable development through innovative research, monitoring, 
               evaluation, and learning.
             </p>
           </BelowImageContent>
