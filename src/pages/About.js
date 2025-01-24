@@ -274,7 +274,7 @@ function About() {
             <p>
               To be a global leader in empowering organizations with data-driven solutions, fostering 
               accountability and driving sustainable development through innovative research, monitoring, 
-              evaluation, and learning.
+              evaluation and learning.
             </p>
           </BelowImageContent>
         </ContentGrid>
