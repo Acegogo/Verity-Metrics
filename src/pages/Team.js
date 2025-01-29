@@ -253,7 +253,7 @@ function Team() {
               </ul>
             </Achievements>
             <p>
-              Fondo holds a Master's in Education (ongoing) from Maseno University and a Bachelor's in Special Needs Education with IT. His passion for equity and inclusion, combined with his technical expertise, makes him a valuable asset to Verity Metrics International.
+              Fondo holds a Master's in Education from Maseno University and a Bachelor's in Special Needs Education with IT. His passion for equity and inclusion, combined with his technical expertise, makes him a valuable asset to Verity Metrics International.
             </p>
           </DirectorBio>
         </TeamMemberCard>
@@ -304,7 +304,7 @@ function Team() {
               </ul>
             </Achievements>
             <p>
-              Gabriel holds a Master's in Human Resources Management (ongoing) and a Bachelor's in Education (Arts) from the University of Nairobi. His expertise spans project coordination, advocacy and emergency response, making him a valuable asset to Verity Metrics International.
+              Gabriel holds a Master's in Human Resources Management and a Bachelor's in Education (Arts) from the University of Nairobi. His expertise spans project coordination, advocacy and emergency response, making him a valuable asset to Verity Metrics International.
             </p>
           </DirectorBio>
         </TeamMemberCard>
@@ -396,10 +396,11 @@ function Team() {
             </p>
             <p>
               <strong>What Sets Him Apart?</strong>
-              Daniel has played a pivotal role in designing and implementing MEAL frameworks for multi-million-dollar interventions in areas such as nutrition, WASH, livelihoods, cash assistance and child protection. As a MEAL Coordinator at World Vision Kenya, he has provided leadership in program evaluations, impact assessments and donor engagement, significantly contributing to the expansion of the USAID BHA portfolio in Kenya.
+
+               Daniel has played a pivotal role in designing and implementing MEAL frameworks for multi-million-dollar interventions in areas such as nutrition, WASH, livelihoods, cash assistance and child protection. As a MEAL Coordinator at World Vision Kenya, he has provided leadership in program evaluations, impact assessments and donor engagement, significantly contributing to the expansion of the USAID BHA portfolio in Kenya.
             </p>
             <p>
-              With a B.Sc. in Project Planning and Management and a Master's in Community Development (ongoing), Daniel is also certified in disaster management, humanitarian response and cash & voucher assistance programming. His expertise in capacity building, program reporting and MEAL system design makes him a trusted leader in development work.
+              With a B.Sc. in Project Planning and Management and a Master's in Community Development, Daniel is also certified in disaster management, humanitarian response and cash & voucher assistance programming. His expertise in capacity building, program reporting and MEAL system design makes him a trusted leader in development work.
             </p>
           </DirectorBio>
         </TeamMemberCard>
