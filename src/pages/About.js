@@ -235,8 +235,8 @@ function About() {
               </p>
               
               <p>
-                We believe that data tells a story, and our role is to help organizations uncover that story 
-                to make informed decisions, improve program effectiveness, and maximize their impact.
+                We believe that data tells a story and our role is to help organizations uncover that story 
+                to make informed decisions, improve program effectiveness and maximize their impact.
               </p>
             </div>
           </TextContent>
