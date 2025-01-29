@@ -142,7 +142,7 @@ function Contact() {
         >
           <ContactInfo>
             <h3>Get in Touch</h3>
-            <p>Get in touch with us today to learn how we can support your organization’s goals! Reach out to us through any of these channels:</p>
+            <p>Get in touch with us today to learn how we can support your organization's goals! Reach out to us through any of these channels:</p>
           </ContactInfo>
 
           <ContactInfo>
@@ -203,6 +203,20 @@ function Contact() {
                 WhatsApp
               </SocialLink>
             </SocialLinks>
+          </ContactInfo>
+
+          <ContactInfo>
+            <h3>Email</h3>
+            <p>
+              You can reach us at: 
+              <SocialLink 
+                href="mailto:veritymetrics@outlook.com"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                veritymetrics@outlook.com
+              </SocialLink>
+            </p>
           </ContactInfo>
         </ContactCard>
       </ContactContainer>

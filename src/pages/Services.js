@@ -184,13 +184,13 @@ const services = [
   },
   {
     id: 2,
-    title: "Monitoring, Evaluation, Accountability, and Learning (MEAL)",
+    title: "Monitoring, Evaluation, Accountability and Learning (MEAL)",
     description: "Our MEAL services are designed to ensure that programs are implemented effectively, achieve their intended impact and remain accountable to stakeholders. We develop customized MEAL frameworks to track progress, measure outcomes and identify areas for improvement. Through robust data collection, analysis and reporting, we provide actionable recommendations to enhance program performance. Our MEAL approach also emphasizes learning and adaptation, enabling organizations to continuously refine their strategies for greater impact.",
     icon: "/images/services/meal.svg"
   },
   {
     id: 3,
-    title: "Gender, Equality, and Disability Inclusion",
+    title: "Gender, Equality and Disability Inclusion",
     description: "We are committed to promoting gender equality and disability inclusion across all sectors. Our services include designing and implementing inclusive policies, programs and practices that ensure equal opportunities for all. We work with organizations to address barriers faced by marginalized groups, including women, girls and persons with disabilities. Through advocacy, capacity building and community engagement, we foster environments where diversity is celebrated, and everyone can thrive.",
     icon: "/images/services/inclusion.svg"
   },

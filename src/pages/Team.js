@@ -220,7 +220,7 @@ function Team() {
           }}
         >
           <MemberInfo>
-            <h3>Fondo Hassan</h3>
+            <h3>Fondo Hassan - Director</h3>
             <div className="position">Special Needs Education Expert & Researcher</div>
             <Expertise>
               <h4>Areas of Expertise</h4>
@@ -356,6 +356,50 @@ function Team() {
             </Achievements>
             <p>
               Abraham holds a Bachelor's in Early Childhood Studies and Primary Education from Mount Kenya University and is fluent in English and Swahili. His passion for education, combined with his strategic planning and leadership skills, makes him an invaluable member of the Verity Metrics International team.
+            </p>
+          </DirectorBio>
+        </TeamMemberCard>
+
+        {/* Daniel Kheri Kazungu's Card */}
+        <TeamMemberCard
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.8,
+            type: "spring",
+            stiffness: 100
+          }}
+          whileHover={{
+            scale: 1.02,
+            transition: { duration: 0.3 }
+          }}
+        >
+          <MemberInfo>
+            <h3>Daniel Kheri Kazungu</h3>
+            <div className="position">MEAL Specialist & Program Development Expert</div>
+            <Expertise>
+              <h4>Areas of Expertise</h4>
+              <ul>
+                <ExpertiseTag>Monitoring & Evaluation</ExpertiseTag>
+                <ExpertiseTag>Program Development</ExpertiseTag>
+                <ExpertiseTag>Data-Driven Decision Making</ExpertiseTag>
+                <ExpertiseTag>Accountability</ExpertiseTag>
+                <ExpertiseTag>Capacity Building</ExpertiseTag>
+                <ExpertiseTag>Humanitarian Response</ExpertiseTag>
+              </ul>
+            </Expertise>
+          </MemberInfo>
+          <DirectorBio>
+            <p>
+              Daniel Kheri Kazungu is a highly skilled Monitoring, Evaluation, Accountability and Learning (MEAL) specialist with over seven years of experience in the humanitarian and development sector. He has successfully led MEAL processes for large-scale programs, working across Kenya, Ethiopia and Sudan to enhance data-driven decision-making and program accountability.
+            </p>
+            <p>
+              <strong>What Sets Him Apart?</strong>
+              Daniel has played a pivotal role in designing and implementing MEAL frameworks for multi-million-dollar interventions in areas such as nutrition, WASH, livelihoods, cash assistance and child protection. As a MEAL Coordinator at World Vision Kenya, he has provided leadership in program evaluations, impact assessments and donor engagement, significantly contributing to the expansion of the USAID BHA portfolio in Kenya.
+            </p>
+            <p>
+              With a B.Sc. in Project Planning and Management and a Master's in Community Development (ongoing), Daniel is also certified in disaster management, humanitarian response and cash & voucher assistance programming. His expertise in capacity building, program reporting and MEAL system design makes him a trusted leader in development work.
             </p>
           </DirectorBio>
         </TeamMemberCard>
