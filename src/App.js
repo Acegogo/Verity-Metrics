@@ -14,7 +14,7 @@ const theme = {
   colors: {
     primary: '#7928CA',
     secondary: '#4DBBEB',
-    accent: '#00E4FF',
+    accent: '#FF9D66',
     highlight: '#A2FAEB',
     success: '#66D9A8',
     text: '#2D3748',
@@ -25,7 +25,7 @@ const theme = {
   },
   gradients: {
     primary: 'linear-gradient(135deg, #7928CA 0%, #4DBBEB 100%)',
-    secondary: 'linear-gradient(135deg, #4DBBEB 0%, #00E4FF 100%)',
+    secondary: 'linear-gradient(135deg, #4DBBEB 0%, #FF9D66 100%)',
     accent: 'linear-gradient(135deg, #00E4FF 0%, #7928CA 100%)',
     card: 'linear-gradient(135deg, rgba(121, 40, 202, 0.08) 0%, rgba(77, 187, 235, 0.08) 100%)',
     success: 'linear-gradient(135deg, #66D9A8 0%, #4DBBEB 100%)',

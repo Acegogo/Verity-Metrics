@@ -11,7 +11,8 @@ const HeroSection = styled.section`
   background: linear-gradient(
     to right,
     rgba(121, 40, 202, 0.4),
-    rgba(77, 187, 235, 0.3)
+    rgba(77, 187, 235, 0.3),
+    rgba(255, 157, 102, 0.3)
   ),
   url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920');
   background-size: cover;
@@ -68,7 +69,7 @@ const Title = styled(motion.h1)`
   font-weight: 700;
   
   span {
-    background: ${props => props.theme.gradients.primary};
+    background: ${props => props.theme.gradients.secondary};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
@@ -84,7 +85,7 @@ const Subtitle = styled(motion.p)`
   max-width: 800px;
   margin-bottom: 2rem;
   line-height: 1.6;
-  color: white;
+  color: ${props => props.theme.colors.accent};
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -133,7 +134,7 @@ const Section = styled.div`
       transform: translateX(-50%);
       width: 100px;
       height: 3px;
-      background: ${props => props.theme.gradients.primary};
+      background: ${props => props.theme.gradients.secondary};
     }
   }
   

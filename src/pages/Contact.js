@@ -202,6 +202,19 @@ function Contact() {
                 </svg>
                 WhatsApp
               </SocialLink>
+
+              <SocialLink 
+                href="https://www.linkedin.com/company/106668154"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.586v-5.579c0-1.333-.025-3.048-1.853-3.048-1.853 0-2.136 1.446-2.136 2.935v5.692h-3.586V10.999h3.448v1.563h.049c.48-.908 1.653-1.86 3.397-1.86 3.628 0 4.295 2.386 4.295 5.493v5.257zM5.337 9.001c-1.152 0-2.083-.934-2.083-2.083 0-1.151.931-2.083 2.083-2.083 1.151 0 2.083.932 2.083 2.083 0 1.149-.932 2.083-2.083 2.083zm1.793 11.451H3.544V10.999h3.586v9.453zM22.225 0H1.775C.794 0 0 .794 0 1.775v20.451C0 23.206.794 24 1.775 24h20.451C23.206 24 24 23.206 24 22.225V1.775C24 .794 23.206 0 22.225 0z"/>
+                </svg>
+                LinkedIn
+              </SocialLink>
             </SocialLinks>
           </ContactInfo>
 
@@ -219,6 +232,8 @@ function Contact() {
             </p>
           </ContactInfo>
         </ContactCard>
+
+        
       </ContactContainer>
     </ContactSection>
   );
