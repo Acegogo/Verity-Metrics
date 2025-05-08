@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import FondoHassanImg from '../assets/images/Fondo_Hassan.jpg';
+import GabrielMureithiImg from '../assets/images/Gabriel_Mureithi.jpg';
+import EvansOchiengImg from '../assets/images/Evans_Ochieng.jpg';
+import GeorgeLubangaImg from '../assets/images/George_Lubanga.jpg';
 
 const TeamSection = styled.section`
   padding: 8rem 2rem 5rem;
@@ -192,6 +196,55 @@ const Achievements = styled.div`
   }
 `;
 
+const AnimatedImage = styled(motion.img)`
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(121,40,202,0.12);
+  border: 3px solid rgba(121, 40, 202, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: ${props => props.theme.colors.accent};
+    box-shadow: 0 8px 24px rgba(121,40,202,0.2);
+  }
+`;
+
+const ImageContainer = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(121,40,202,0.1), rgba(77,187,235,0.1));
+    z-index: -1;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+  }
+`;
+
 function Team() {
   return (
     <TeamSection>
@@ -208,52 +261,68 @@ function Team() {
         <TeamMemberCard
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.8, 
+          transition={{
+            duration: 0.8,
             delay: 0.2,
             type: "spring",
             stiffness: 100
           }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.02,
             transition: { duration: 0.3 }
           }}
         >
+          <ImageContainer
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              type: "spring",
+              stiffness: 200
+            }}
+          >
+            <AnimatedImage
+              src={FondoHassanImg}
+              alt="Fondo Hassan"
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
+            />
+          </ImageContainer>
           <MemberInfo>
-            <h3>Fondo Hassan - Director</h3>
-            <div className="position">Special Needs Education Expert & Researcher</div>
+            <h3>FONDO K HASSAN</h3>
+            <div className="position">
+              Inclusive Education | Disability Advocacy | Program Strategy | MEAL | Research & Policy Influence
+            </div>
             <Expertise>
-              <h4>Areas of Expertise</h4>
+              <h4>Current Roles</h4>
               <ul>
-                <ExpertiseTag>Special Needs Education</ExpertiseTag>
-                <ExpertiseTag>Research</ExpertiseTag>
-                <ExpertiseTag>MEAL</ExpertiseTag>
-                <ExpertiseTag>Assistive Technology</ExpertiseTag>
-                <ExpertiseTag>Play-based Therapy</ExpertiseTag>
-                <ExpertiseTag>Early Screening</ExpertiseTag>
+                <ExpertiseTag>Founder and Executive Director | Verity Metrics International Limited</ExpertiseTag>
+                <ExpertiseTag>Project Officer | Centre for Education Policy and Climate Justice (CEPCJ)</ExpertiseTag>
+                <ExpertiseTag>Lead Trainer – Core Life Skills | We Can Work Program</ExpertiseTag>
               </ul>
             </Expertise>
           </MemberInfo>
           <DirectorBio>
             <p>
-              Fondo Hassan is a dedicated educationist and researcher with over 5 years of experience in inclusive education, program evaluation and disability inclusion. Specializing in Special Needs Education (SNE), Fondo has a proven track record of designing and implementing research projects, developing individualized education plans and integrating assistive technology to support learners with disabilities.
+              Fondo Hassan is a visionary leader, strategist and advocate for inclusive development with a mission to transform lives through innovation, research and empowerment. As the Founder and Executive Director of Verity Metrics International Limited, Fondo has built a dynamic platform that delivers cutting-edge research, policy advisory, monitoring and evaluation and inclusive development solutions across Africa.
             </p>
             <p>
-              As a Technical Working Group Member with the Clinton Health Access Initiative (CHAI), Fondo has led play-based therapy interventions and early screening initiatives for children with disabilities, ensuring timely and tailored support. He has also coordinated the distribution of educational and therapeutic toys, promoting inclusive play and development in schools and community centers.
+              Driven by an unwavering commitment to social justice and equity, Fondo has led impactful initiatives spanning inclusive education, disability rights, health systems strengthening and climate-resilient development. His work has shaped transformative programs with organizations such as the Clinton Health Access Initiative's Building a World of Play initiative, where he pioneered early childhood disability screening, assistive technology integration and inclusive therapeutic play interventions that have reached hundreds of children with disabilities across Kenya.
             </p>
             <p>
-              Fondo's expertise extends to Monitoring, Evaluation, Accountability and Learning (MEAL), where he has developed frameworks to assess program effectiveness and drive data-driven decision-making. His work has empowered caregivers and educators through training and capacity-building initiatives, fostering inclusive learning environments.
+              Internationally, Fondo has coordinated inclusive remote learning programs through Student World in the United Kingdom, designing innovative, accessible education models for neurodivergent students. As a Lead Trainer for Core Life Skills under the We Can Work Program, he builds the employment readiness and social empowerment capacities of young persons with disabilities, positioning them for leadership and economic independence.
             </p>
-            <Achievements>
-              <h4>Key Achievements</h4>
-              <ul>
-                <li>Integrating assistive technology into play therapy, enhancing accessibility for children with disabilities.</li>
-                <li>Leading early screening efforts to identify and support children with diverse needs.</li>
-                <li>Publishing research on inclusive education and curriculum implementation in schools for the deaf.</li>
-              </ul>
-            </Achievements>
             <p>
-              Fondo holds a Master's in Education from Maseno University and a Bachelor's in Special Needs Education with IT. His passion for equity and inclusion, combined with his technical expertise, makes him a valuable asset to Verity Metrics International.
+              Fondo's expertise spans inclusive education program design, disability advocacy, Monitoring, Evaluation, Accountability and Learning (MEAL), project management, research design, policy influence, grant and proposal development and multi-stakeholder engagement. He has worked extensively across Kenya, delivering results-driven programs in Nairobi, Turkana, Kilifi, Kiambu, Central Kenya and Machakos and enabling grassroots organizations to secure critical funding from global donors, including the Government of Ireland and the Issroff Family Foundation.
+            </p>
+            <p>
+              Currently, Fondo also serves as a Project Officer at the Centre for Education Policy and Climate Justice (CEPCJ), where he champions the integration of education reform with climate justice advocacy, ensuring marginalized communities are centered in national policy dialogues.
+            </p>
+            <p>
+              Fondo holds a Master's Degree and a Bachelor's Degree in Special Needs Education from Maseno University, alongside a Diploma in Monitoring and Evaluation from Kenyatta University. His rare blend of visionary leadership, technical expertise and grassroots experience makes him not just a consultant, but a catalyst for lasting change. Through Verity Metrics International Limited, Fondo continues to inspire a new era of inclusive, evidence-driven development in Africa and beyond.
             </p>
           </DirectorBio>
         </TeamMemberCard>
@@ -273,6 +342,25 @@ function Team() {
             transition: { duration: 0.3 }
           }}
         >
+          <ImageContainer
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              type: "spring",
+              stiffness: 200
+            }}
+          >
+            <AnimatedImage
+              src={GabrielMureithiImg}
+              alt="Gabriel Mureithi"
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
+            />
+          </ImageContainer>
           <MemberInfo>
             <h3>Gabriel Mureithi</h3>
             <div className="position">Project Management & Child Protection Expert</div>
@@ -309,13 +397,72 @@ function Team() {
           </DirectorBio>
         </TeamMemberCard>
 
+        {/* Evans' Card */}
+        <TeamMemberCard
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.6,
+            type: "spring",
+            stiffness: 100
+          }}
+          whileHover={{
+            scale: 1.02,
+            transition: { duration: 0.3 }
+          }}
+        >
+          <ImageContainer
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              type: "spring",
+              stiffness: 200
+            }}
+          >
+            <AnimatedImage
+              src={EvansOchiengImg}
+              alt="Evans Ochieng Nudih"
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
+            />
+          </ImageContainer>
+          <MemberInfo>
+            <h3>EVANS OCHIENG NUDIH</h3>
+            <div className="position">
+              Senior Research & Policy Specialist | Monitoring & Evaluation Expert | Health & Social Policy Analyst
+            </div>
+            <Expertise>
+              <h4>Current Role</h4>
+              <ul>
+                <ExpertiseTag>Team Member, Verity Metrics International Limited</ExpertiseTag>
+              </ul>
+            </Expertise>
+          </MemberInfo>
+          <DirectorBio>
+            <p>
+              Evans Ochieng Nudih is a seasoned Senior Research and Policy Specialist with over 15 years of experience in research, monitoring and evaluation (M&E), health policy, economic analysis and project management. He holds a Bachelor of Arts degree in Economics and Political Science from the University of Nairobi. Evans began his career at the Ministry of Planning and National Development, where he contributed to the preparation of Kenya's Third Annual Progress Report of the Economic Recovery Strategy (ERS) and the Public Expenditure Review (PER) 2007. He also supported the implementation of the National Integrated Monitoring and Evaluation System (NIMES), gaining valuable expertise in national development tracking and policy evaluation.
+            </p>
+            <p>
+              From 2008 to 2012, Evans worked at Disabled for Education and Economic Development (DEEDS) Kenya as a Senior Program Officer, Monitoring and Evaluation, where he strengthened partnerships with government and civil society, led compliance monitoring and enhanced organizational visibility through evidence-based reporting. He currently serves as a Research Officer seconded to the Chairperson of the Health Committee at the National Assembly of Kenya, providing technical research support, policy analysis and legislative advisory services to influence health sector reforms.
+            </p>
+            <p>
+              Evans brings to Verity Metrics International Limited a strong background in research design, monitoring and evaluation, health policy development, project risk management and strategic partnership building. His extensive experience across government, non-governmental organizations and parliamentary institutions positions him as a valuable contributor to Verity Metrics' mission of "Innovating Solutions, Inspiring Global Change."
+            </p>
+          </DirectorBio>
+        </TeamMemberCard>
+
         {/* Abraham's Card */}
         <TeamMemberCard
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ 
             duration: 0.8, 
-            delay: 0.6,
+            delay: 0.8,
             type: "spring",
             stiffness: 100
           }}
@@ -401,6 +548,66 @@ function Team() {
             </p>
             <p>
               With a B.Sc. in Project Planning and Management and a Master's in Community Development, Daniel is also certified in disaster management, humanitarian response and cash & voucher assistance programming. His expertise in capacity building, program reporting and MEAL system design makes him a trusted leader in development work.
+            </p>
+          </DirectorBio>
+        </TeamMemberCard>
+
+        {/* George Lubanga's Card */}
+        <TeamMemberCard
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 1.0,
+            type: "spring",
+            stiffness: 100
+          }}
+          whileHover={{
+            scale: 1.02,
+            transition: { duration: 0.3 }
+          }}
+        >
+          <ImageContainer
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              type: "spring",
+              stiffness: 200
+            }}
+          >
+            <AnimatedImage
+              src={GeorgeLubangaImg}
+              alt="George Lubanga Yasena"
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
+            />
+          </ImageContainer>
+          <MemberInfo>
+            <h3>George Lubanga Yasena</h3>
+            <div className="position">Administrative Assistant</div>
+            <Expertise>
+              <h4>Current Role</h4>
+              <ul>
+                <ExpertiseTag>Administrative Assistant | Verity Metrics International Limited</ExpertiseTag>
+              </ul>
+            </Expertise>
+          </MemberInfo>
+          <DirectorBio>
+            <p>
+              George Lubanga Yasena is an experienced Administrative Assistant at Verity Metrics International Limited, where he plays an instrumental role in supporting daily operations, client relations and internal coordination efforts. With a strong background in sales, customer service, and office management, George brings over a decade of practical expertise to the team, helping streamline administrative functions and enhance organizational efficiency.
+            </p>
+            <p>
+              Prior to joining Verity Metrics, George built a robust career across various sectors, serving in key positions such as Technical Sales Executive at Automan International Ltd and Sales Representative roles at Uzapoint Technologies and TRIDEV Wholesale & Supermarket. His diverse professional background has sharpened his skills in client communication, business operations, reporting, and stakeholder engagement, making him an invaluable asset to the Verity Metrics team.
+            </p>
+            <p>
+              George is highly organized, detail-oriented, and client-focused, consistently ensuring that operational processes run smoothly and that the administrative backbone of the organization remains strong. His passion for supporting dynamic teams and ensuring excellent service delivery aligns perfectly with Verity Metrics' commitment to professionalism, quality and impact.
+            </p>
+            <p>
+              He holds a Diploma in Sales and Marketing from Eldoret Polytechnic. George is fluent in both English and Swahili, further enabling effective communication across diverse teams and client portfolios.
             </p>
           </DirectorBio>
         </TeamMemberCard>

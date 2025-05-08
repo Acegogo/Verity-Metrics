@@ -75,12 +75,12 @@ const LogoText = styled.span`
     background: ${props => props.theme.gradients.secondary};
     opacity: 0.8;
   }
-
+  
   @media (max-width: 768px) {
     font-size: 1.1rem;
     
     small {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
     }
   }
 
@@ -274,4 +274,4 @@ function Navbar() {
   );
 }
 
-export default Navbar; 
+export default Navbar;
