@@ -232,6 +232,165 @@ const ValueCard = styled(motion.div)`
   }
 `;
 
+// Lead Magnet CTA Section
+const LeadMagnetSection = styled.section`
+  background: #fff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-radius: 18px;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  margin: 2.5rem auto 2.5rem auto;
+  max-width: 900px;
+  @media (max-width: 600px) {
+    padding: 2rem 0.5rem;
+  }
+`;
+const LeadMagnetHeadline = styled.h2`
+  font-size: 2.1rem;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+`;
+const LeadMagnetSubtext = styled.p`
+  font-size: 1.15rem;
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 1.5rem;
+`;
+const WhatsAppButton = styled.a`
+  display: inline-block;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 0.5rem;
+  &:hover {
+    background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: ${({ theme }) => theme.shadows.hover};
+  }
+`;
+
+// Calendly Booking Section
+const CalendlySection = styled.section`
+  background: #f8fafc;
+  padding: 3rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  margin: 2.5rem auto 2.5rem auto;
+  max-width: 900px;
+  text-align: center;
+`;
+const CalendlyTitle = styled.h2`
+  font-size: 2rem;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+`;
+const CalendlyIframeWrapper = styled.div`
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  aspect-ratio: 1.5 / 1;
+  @media (max-width: 700px) {
+    max-width: 100%;
+    aspect-ratio: 1 / 1.3;
+  }
+`;
+const CalendlyIframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+`;
+
+// Testimonials Section
+const TestimonialsSection = styled.section`
+  background: #fff;
+  padding: 3rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  margin: 2.5rem auto 2.5rem auto;
+  max-width: 900px;
+`;
+const TestimonialsTitle = styled.h2`
+  font-size: 2rem;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+`;
+const TestimonialGrid = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+`;
+const TestimonialCard = styled.blockquote`
+  background: ${({ theme }) => theme.gradients.card};
+  border-left: 5px solid ${({ theme }) => theme.colors.primary};
+  border-radius: 12px;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  padding: 1.5rem 1.2rem;
+  max-width: 370px;
+  font-size: 1.1rem;
+  color: ${({ theme }) => theme.colors.text};
+  font-style: italic;
+  position: relative;
+  margin: 0;
+  &::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 60px;
+    background: ${({ theme }) => theme.gradients.primary};
+    margin: 1rem 0 0 0;
+    border-radius: 2px;
+  }
+  footer {
+    font-size: 0.98rem;
+    color: ${({ theme }) => theme.colors.accent};
+    font-style: normal;
+    margin-top: 0.7rem;
+    font-weight: 600;
+  }
+`;
+
+// Floating WhatsApp Button
+const FloatingWhatsApp = styled.a`
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+  transition: background 0.2s, transform 0.2s;
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  &:hover {
+    background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+    transform: scale(1.08);
+  }
+`;
+
 function Home() {
   return (
     <main>
@@ -262,6 +421,31 @@ function Home() {
           </div>
         </HeroContent>
       </HeroSection>
+
+      {/* Lead Magnet CTA Section */}
+      <LeadMagnetSection>
+        <LeadMagnetHeadline>Need Help With Proposals or M&amp;E?</LeadMagnetHeadline>
+        <LeadMagnetSubtext>Get a FREE 15-min consultation with our expert team.</LeadMagnetSubtext>
+        <WhatsAppButton
+          href="https://wa.me/254117330809"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Chat With Us on WhatsApp
+        </WhatsAppButton>
+      </LeadMagnetSection>
+
+      {/* Calendly Booking Section */}
+      <CalendlySection>
+        <CalendlyTitle>Schedule a Session</CalendlyTitle>
+        <CalendlyIframeWrapper>
+          <CalendlyIframe
+            src="https://calendly.com/veritymetric-info/30min"
+            title="Book a session with Verity Metrics"
+            allow="fullscreen"
+          />
+        </CalendlyIframeWrapper>
+      </CalendlySection>
 
       <ContentSection>
         <MainContent>
@@ -362,6 +546,34 @@ function Home() {
           </Section>
         </MainContent>
       </ContentSection>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection>
+        <TestimonialsTitle>What Our Clients Say</TestimonialsTitle>
+        <TestimonialGrid>
+          <TestimonialCard>
+            “Verity Metrics helped us secure major funding. Their proposal support is unmatched.”
+            <footer>– NGO Director, Nairobi</footer>
+          </TestimonialCard>
+          <TestimonialCard>
+            “The M&amp;E training session was clear, actionable, and professional.”
+            <footer>– Programs Lead, Kisumu</footer>
+          </TestimonialCard>
+        </TestimonialGrid>
+      </TestimonialsSection>
+
+      {/* Floating WhatsApp Button */}
+      <FloatingWhatsApp
+        href="https://wa.me/254117330809"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+      >
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="16" fill="none"/>
+          <path d="M16 6C10.477 6 6 10.477 6 16c0 1.624.43 3.162 1.18 4.49L6 26l5.66-1.16A9.94 9.94 0 0016 26c5.523 0 10-4.477 10-10S21.523 6 16 6zm0 18a7.94 7.94 0 01-4.28-1.26l-.3-.18-3.36.69.69-3.27-.19-.31A7.96 7.96 0 018 16c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm4.07-6.25c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.77-1.09-.66-.59-1.1-1.31-1.23-1.53-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.07-.11-.5-1.2-.68-1.65-.18-.44-.36-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.21.22-.8.78-.8 1.9 0 1.12.82 2.2.94 2.35.12.15 1.61 2.46 3.9 3.36.55.19.98.3 1.31.38.55.14 1.05.12 1.44.07.44-.07 1.3-.53 1.48-1.04.18-.51.18-.95.13-1.04-.05-.09-.2-.15-.42-.26z" fill="#fff"/>
+        </svg>
+      </FloatingWhatsApp>
     </main>
   );
 }
