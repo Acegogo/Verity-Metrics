@@ -148,6 +148,13 @@ const BelowImageContent = styled(motion.div)`
   width: 100%;
   margin: 5rem auto 0;
   text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
 
   h3 {
     color: ${props => props.theme.colors.primary};
@@ -194,14 +201,18 @@ const BelowImageContent = styled(motion.div)`
       color: ${props => props.theme.colors.text};
       position: relative;
       padding: 1.5rem 3rem;
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(31, 38, 135, 0.2);
       transition: transform 0.3s ease;
       font-size: 1.2rem;
 
       &:hover {
         transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(31, 38, 135, 0.3);
       }
     }
   }
@@ -246,10 +257,10 @@ function About() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <img 
-              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-              alt="Team collaboration"
-            />
+            <video width="100%" height="auto" controls poster="/images/logo.png.jpg">
+              <source src="/videos/about-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </ImageContent>
 
           <BelowImageContent

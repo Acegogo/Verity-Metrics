@@ -7,14 +7,27 @@ const Nav = styled.nav`
   width: 100%;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(
-    135deg,
-    rgba(121, 40, 202, 0.92),
-    rgba(77, 187, 235, 0.92)
-  );
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
-  box-shadow: ${props => props.scrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none'};
+  box-shadow: ${props => props.scrolled ? '0 8px 32px rgba(31, 38, 135, 0.37)' : 'none'};
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(121, 40, 202, 0.9),
+      rgba(77, 187, 235, 0.9)
+    );
+    z-index: -1;
+  }
 `;
 
 const NavContainer = styled.div`
@@ -107,27 +120,43 @@ const NavLink = styled(Link)`
   color: white;
   text-decoration: none;
   font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   position: relative;
-  padding: 0.5rem 0;
-
-  &::after {
+  overflow: hidden;
+  
+  &::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: ${props => props.theme.gradients.secondary};
-    transition: width 0.3s ease;
-  }
-
-  &:hover::after,
-  &.active::after {
+    top: 0;
+    left: -100%;
     width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
   }
-
+  
   &:hover {
-    color: ${props => props.theme.colors.highlight};
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &.active {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
   }
 `;
 

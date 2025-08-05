@@ -234,13 +234,39 @@ const ValueCard = styled(motion.div)`
 
 // Lead Magnet CTA Section
 const LeadMagnetSection = styled.section`
-  background: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 3rem 1.5rem;
   text-align: center;
   border-radius: 18px;
-  box-shadow: ${({ theme }) => theme.shadows.card};
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
   margin: 2.5rem auto 2.5rem auto;
   max-width: 900px;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
   @media (max-width: 600px) {
     padding: 2rem 0.5rem;
   }
@@ -265,25 +291,66 @@ const WhatsAppButton = styled.a`
   padding: 0.9rem 2.2rem;
   border-radius: 30px;
   text-decoration: none;
-  box-shadow: ${({ theme }) => theme.shadows.card};
-  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
   margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+  
   &:hover {
     background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
     transform: translateY(-2px) scale(1.04);
-    box-shadow: ${({ theme }) => theme.shadows.hover};
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+  }
+  
+  &:hover::before {
+    left: 100%;
   }
 `;
 
 // Calendly Booking Section
 const CalendlySection = styled.section`
-  background: #f8fafc;
+  background: rgba(248, 250, 252, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 3rem 1.5rem;
   border-radius: 18px;
-  box-shadow: ${({ theme }) => theme.shadows.card};
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
   margin: 2.5rem auto 2.5rem auto;
   max-width: 900px;
   text-align: center;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #7928CA, #4DBBEB, #FF9D66);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(10px);
+  }
 `;
 const CalendlyTitle = styled.h2`
   font-size: 2rem;
@@ -307,17 +374,40 @@ const CalendlyIframe = styled.iframe`
   min-height: 400px;
   border: none;
   border-radius: 12px;
-  box-shadow: ${({ theme }) => theme.shadows.card};
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 `;
 
 // Testimonials Section
 const TestimonialsSection = styled.section`
-  background: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 3rem 1.5rem;
   border-radius: 18px;
-  box-shadow: ${({ theme }) => theme.shadows.card};
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
   margin: 2.5rem auto 2.5rem auto;
   max-width: 900px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(121, 40, 202, 0.05) 0%,
+      rgba(77, 187, 235, 0.05) 50%,
+      rgba(255, 157, 102, 0.05) 100%
+    );
+    border-radius: 18px;
+    z-index: -1;
+  }
 `;
 const TestimonialsTitle = styled.h2`
   font-size: 2rem;
@@ -338,10 +428,12 @@ const TestimonialGrid = styled.div`
   }
 `;
 const TestimonialCard = styled.blockquote`
-  background: ${({ theme }) => theme.gradients.card};
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-left: 5px solid ${({ theme }) => theme.colors.primary};
   border-radius: 12px;
-  box-shadow: ${({ theme }) => theme.shadows.card};
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
   padding: 1.5rem 1.2rem;
   max-width: 370px;
   font-size: 1.1rem;
@@ -349,6 +441,13 @@ const TestimonialCard = styled.blockquote`
   font-style: italic;
   position: relative;
   margin: 0;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+  }
+  
   &::after {
     content: '';
     display: block;
@@ -358,6 +457,7 @@ const TestimonialCard = styled.blockquote`
     margin: 1rem 0 0 0;
     border-radius: 2px;
   }
+  
   footer {
     font-size: 0.98rem;
     color: ${({ theme }) => theme.colors.accent};
@@ -380,14 +480,32 @@ const FloatingWhatsApp = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
-  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
   color: #fff;
   font-size: 2rem;
   text-decoration: none;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #25d366, #128c7e);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(8px);
+  }
+  
   &:hover {
     background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
-    transform: scale(1.08);
+    transform: scale(1.12);
+    box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
   }
 `;
 

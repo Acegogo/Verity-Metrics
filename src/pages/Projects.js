@@ -35,9 +35,31 @@ const ProjectContainer = styled.article`
   max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(121, 40, 202, 0.05) 0%,
+      rgba(77, 187, 235, 0.05) 50%,
+      rgba(255, 157, 102, 0.05) 100%
+    );
+    border-radius: 16px;
+    z-index: -1;
+  }
 
   @media (max-width: 768px) {
     padding: 1rem;
@@ -121,12 +143,22 @@ const AnimatedProjectOverview = styled(motion.section)`
 `;
 
 const AnimatedTestimonial = styled(motion.blockquote)`
-  background: ${props => props.theme.colors.background};
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2rem;
   border-radius: 12px;
   margin: 2rem 0;
   font-style: italic;
   position: relative;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+  }
 
   &::before {
     content: '"';
@@ -179,6 +211,92 @@ const galleryAnimation = {
       ease: "easeOut"
     }
   }
+};
+
+const I3FBusinessGrantProject = () => {
+  return (
+    <>
+      <Helmet>
+        <title>I3F Business Grant Winner - Verity Metrics Projects</title>
+        <meta name="description" content="Verity Metrics International wins I3F Business Grant Competition, securing Top 2 position among Kenya's top 12 ventures." />
+        <meta name="keywords" content="I3F Business Grant, Business Competition, Verity Metrics Awards, Innovation Grant, Social Impact" />
+      </Helmet>
+      
+      <ProjectContainer>
+        <AnimatedProjectContent
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <AnimatedProjectHeader variants={fadeInUp}>
+            <h1>🏆 Verity Metrics Wins I3F Business Grant</h1>
+            
+            <ProjectMeta>
+              <MetaItem>🏆 Top 2 Finalist</MetaItem>
+              <MetaItem>📅 July 2025</MetaItem>
+              <MetaItem>🏢 Imagine * Inspire * Innovate Foundation (i3F)</MetaItem>
+            </ProjectMeta>
+          </AnimatedProjectHeader>
+
+          <motion.div
+            variants={fadeInUp}
+            style={{ marginBottom: '2rem' }}
+          >
+            <img 
+              src="/images/projects/VMIL 9th july (1).png" 
+              alt="Verity Metrics I3F Business Grant Award"
+              style={{
+                width: '100%',
+                maxWidth: '800px',
+                height: 'auto',
+                borderRadius: '12px',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                display: 'block',
+                margin: '0 auto'
+              }}
+            />
+          </motion.div>
+
+          <AnimatedProjectOverview variants={fadeInUp}>
+            <SectionTitle>Project Achievement</SectionTitle>
+            <p>
+              After 6 weeks of rigorous business training and assessment, Verity Metrics International emerged 1st in the business plan stage and secured a Top 2 spot in the final pitch round of the Imagine * Inspire * Innovate Foundation (i3F) Business Grant Competition.
+            </p>
+            <p>
+              This competitive process featured Kenya's top 12 ventures, with only 5 finalists awarded grants. Verity Metrics was recognized for innovation, clarity and social impact. This milestone strengthens our commitment to inclusive development and research-backed solutions.
+            </p>
+          </AnimatedProjectOverview>
+
+          <AnimatedSection variants={fadeInUp}>
+            <SectionTitle>Competition Highlights</SectionTitle>
+            <BulletList>
+              <li>1st place in business plan stage</li>
+              <li>Top 2 finalist in pitch competition</li>
+              <li>Selected from Kenya's top 12 ventures</li>
+              <li>One of only 5 finalists awarded grants</li>
+              <li>Recognition for innovation and social impact</li>
+            </BulletList>
+          </AnimatedSection>
+
+          <AnimatedSection variants={fadeInUp}>
+            <SectionTitle>Award Details</SectionTitle>
+            <BulletList>
+              <li><strong>Award Date:</strong> July 2025</li>
+              <li><strong>Organization:</strong> Imagine * Inspire * Innovate Foundation (i3F)</li>
+              <li><strong>Competition Duration:</strong> 6 weeks of training and assessment</li>
+              <li><strong>Recognition:</strong> Innovation, clarity and social impact</li>
+            </BulletList>
+          </AnimatedSection>
+
+          <AnimatedTestimonial variants={fadeInUp}>
+            "This recognition validates our commitment to inclusive development and research-backed solutions that drive sustainable change."
+            <strong>– Verity Metrics International Team</strong>
+          </AnimatedTestimonial>
+        </AnimatedProjectContent>
+      </ProjectContainer>
+    </>
+  );
 };
 
 const DisabilityInclusionProject = () => {
@@ -261,7 +379,10 @@ function Projects() {
         <meta name="description" content="Explore Verity Metrics International's projects in disability inclusion, education, and community development." />
       </Helmet>
       
-      <DisabilityInclusionProject />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', width: '100%' }}>
+        <I3FBusinessGrantProject />
+        <DisabilityInclusionProject />
+      </div>
     </ProjectsSection>
   );
 }

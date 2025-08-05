@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import FondoHassanImg from '../assets/images/Fondo_Hassan.jpg';
 import GabrielMureithiImg from '../assets/images/Gabriel_Mureithi.jpg';
 import EvansOchiengImg from '../assets/images/Evans_Ochieng.jpg';
-import GeorgeLubangaImg from '../assets/images/George_Lubanga.jpg';
 
 const TeamSection = styled.section`
   padding: 8rem 2rem 5rem;
@@ -57,34 +56,46 @@ const Title = styled.h2`
 `;
 
 const TeamMemberCard = styled(motion.div)`
-  background: linear-gradient(
-    135deg,
-    rgba(121, 40, 202, 0.05) 0%,
-    rgba(255, 0, 128, 0.05) 100%
-  );
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
-  box-shadow: ${props => props.theme.shadows.card};
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
   overflow: hidden;
   margin-bottom: 3rem;
-  border: 1px solid rgba(121, 40, 202, 0.2);
-  backdrop-filter: blur(10px);
+  position: relative;
   transition: all 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(121, 40, 202, 0.05) 0%,
+      rgba(77, 187, 235, 0.05) 50%,
+      rgba(255, 157, 102, 0.05) 100%
+    );
+    z-index: -1;
+  }
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: ${props => props.theme.shadows.hover},
-                ${props => props.theme.shadows.glow};
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
     border-color: ${props => props.theme.colors.accent};
   }
 `;
 
 const MemberInfo = styled.div`
   padding: 2.5rem 2.5rem 0;
-  background: linear-gradient(
-    to bottom right,
-    rgba(121, 40, 202, 0.05),
-    rgba(77, 187, 235, 0.05)
-  );
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   h3 {
     color: ${props => props.theme.colors.primary};
@@ -99,7 +110,7 @@ const MemberInfo = styled.div`
     color: ${props => props.theme.colors.secondary};
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    opacity: 0.9;
+    font-weight: 500;
   }
 `;
 
@@ -548,66 +559,6 @@ function Team() {
             </p>
             <p>
               With a B.Sc. in Project Planning and Management and a Master's in Community Development, Daniel is also certified in disaster management, humanitarian response and cash & voucher assistance programming. His expertise in capacity building, program reporting and MEAL system design makes him a trusted leader in development work.
-            </p>
-          </DirectorBio>
-        </TeamMemberCard>
-
-        {/* George Lubanga's Card */}
-        <TeamMemberCard
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 1.0,
-            type: "spring",
-            stiffness: 100
-          }}
-          whileHover={{
-            scale: 1.02,
-            transition: { duration: 0.3 }
-          }}
-        >
-          <ImageContainer
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.3,
-              type: "spring",
-              stiffness: 200
-            }}
-          >
-            <AnimatedImage
-              src={GeorgeLubangaImg}
-              alt="George Lubanga Yasena"
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.3 }
-              }}
-            />
-          </ImageContainer>
-          <MemberInfo>
-            <h3>George Lubanga Yasena</h3>
-            <div className="position">Administrative Assistant</div>
-            <Expertise>
-              <h4>Current Role</h4>
-              <ul>
-                <ExpertiseTag>Administrative Assistant | Verity Metrics International Limited</ExpertiseTag>
-              </ul>
-            </Expertise>
-          </MemberInfo>
-          <DirectorBio>
-            <p>
-              George Lubanga Yasena is an experienced Administrative Assistant at Verity Metrics International Limited, where he plays an instrumental role in supporting daily operations, client relations and internal coordination efforts. With a strong background in sales, customer service, and office management, George brings over a decade of practical expertise to the team, helping streamline administrative functions and enhance organizational efficiency.
-            </p>
-            <p>
-              Prior to joining Verity Metrics, George built a robust career across various sectors, serving in key positions such as Technical Sales Executive at Automan International Ltd and Sales Representative roles at Uzapoint Technologies and TRIDEV Wholesale & Supermarket. His diverse professional background has sharpened his skills in client communication, business operations, reporting, and stakeholder engagement, making him an invaluable asset to the Verity Metrics team.
-            </p>
-            <p>
-              George is highly organized, detail-oriented, and client-focused, consistently ensuring that operational processes run smoothly and that the administrative backbone of the organization remains strong. His passion for supporting dynamic teams and ensuring excellent service delivery aligns perfectly with Verity Metrics' commitment to professionalism, quality and impact.
-            </p>
-            <p>
-              He holds a Diploma in Sales and Marketing from Eldoret Polytechnic. George is fluent in both English and Swahili, further enabling effective communication across diverse teams and client portfolios.
             </p>
           </DirectorBio>
         </TeamMemberCard>
