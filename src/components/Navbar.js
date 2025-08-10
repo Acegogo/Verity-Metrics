@@ -266,6 +266,9 @@ function Navbar() {
           <NavLink to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>
             Projects
           </NavLink>
+          <NavLink to="/verity-academy" className={location.pathname === '/verity-academy' ? 'active' : ''}>
+            Verity Academy
+          </NavLink>
           <NavLink to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>
             Contact
           </NavLink>
@@ -293,6 +296,9 @@ function Navbar() {
           </NavLink>
           <NavLink to="/projects" onClick={() => setMobileMenuOpen(false)}>
             Projects
+          </NavLink>
+          <NavLink to="/verity-academy" onClick={() => setMobileMenuOpen(false)}>
+            Verity Academy
           </NavLink>
           <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>
             Contact

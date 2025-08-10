@@ -232,6 +232,61 @@ const ValueCard = styled(motion.div)`
   }
 `;
 
+// Verity Academy Intro Section
+const AcademySection = styled(motion.section)`
+  position: relative;
+  margin: 2.5rem auto;
+  max-width: 1200px;
+  min-height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  background: linear-gradient(
+      to right,
+      rgba(121, 40, 202, 0.65),
+      rgba(77, 187, 235, 0.55)
+    ),
+    url('/images/verity academy/WhatsApp Image 2025-08-10 at 08.00.56_0f4f80d6.jpg');
+  background-size: cover;
+  background-position: center;
+`;
+
+const AcademyContent = styled.div`
+  padding: 2.5rem;
+  color: white;
+  display: grid;
+  gap: 1rem;
+  max-width: 900px;
+`;
+
+const AcademyTitle = styled.h2`
+  font-size: 2rem;
+  line-height: 1.2;
+`;
+
+const AcademySubtitle = styled.p`
+  font-size: 1.15rem;
+  opacity: 0.95;
+`;
+
+const AcademyText = styled.p`
+  font-size: 1rem;
+  opacity: 0.95;
+`;
+
+const AcademyCTA = styled(Link)`
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  background: ${props => props.theme.gradients.secondary};
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  &:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.25); }
+`;
+
 // Lead Magnet CTA Section
 const LeadMagnetSection = styled.section`
   background: rgba(255, 255, 255, 0.1);
@@ -539,6 +594,23 @@ function Home() {
           </div>
         </HeroContent>
       </HeroSection>
+
+      {/* Verity Academy Section */}
+      <AcademySection
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.7 }}
+      >
+        <AcademyContent>
+          <AcademyTitle>Introducing Verity Academy – Excellence in Online Learning</AcademyTitle>
+          <AcademySubtitle>Empowering GCSE learners worldwide with expert tutors, flexible schedules and safeguarding you can trust.</AcademySubtitle>
+          <AcademyText>
+            Verity Academy delivers high-quality, fully online tutoring for GCSE subjects — Mathematics, Sciences, Languages and more. Our expert tutors create tailored learning plans to match each student's needs, ensuring measurable progress and academic confidence.
+          </AcademyText>
+          <AcademyCTA to="/verity-academy">Discover Verity Academy</AcademyCTA>
+        </AcademyContent>
+      </AcademySection>
 
       {/* Lead Magnet CTA Section */}
       <LeadMagnetSection>

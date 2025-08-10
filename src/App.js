@@ -9,6 +9,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Team from './pages/Team';
 import Services from './pages/Services';
+import VerityAcademy from './pages/VerityAcademy';
 
 const theme = {
   colors: {
@@ -65,6 +66,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/team" element={<Team />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/verity-academy" element={<VerityAcademy />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
