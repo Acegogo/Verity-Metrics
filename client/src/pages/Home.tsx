@@ -42,7 +42,7 @@ const services = [
   {
     icon: GraduationCap,
     title: "Special Needs Education",
-    desc: "Expert consultancy in special needs education, inclusive learning environments, and adapted curricula.",
+    desc: "Expert consultancy in special needs education, inclusive learning environments and adapted curricula.",
     image: IMAGES.servicesEducation,
   },
   {
@@ -54,7 +54,7 @@ const services = [
   {
     icon: Building2,
     title: "Organizational Development",
-    desc: "Strategic planning, institutional strengthening, and governance support for sustainable growth.",
+    desc: "Strategic planning, institutional strengthening and governance support for sustainable growth.",
     image: IMAGES.servicesOrgDev,
   },
 ];
@@ -111,7 +111,7 @@ export default function Home() {
               className="text-lg md:text-xl text-sky-100/90 max-w-2xl mb-8 leading-relaxed"
             >
               We empower organizations with data-driven solutions in Research,
-              Monitoring, Evaluation & Learning, Disability Inclusion, and
+              Monitoring, Evaluation & Learning, Disability Inclusion and
               Capacity Building for sustainable development impact.
             </motion.p>
             <motion.div
@@ -287,7 +287,7 @@ export default function Home() {
                 <p className="text-sky-100 leading-relaxed">
                   To empower organizations and communities with innovative,
                   data-driven solutions that promote sustainable development,
-                  inclusivity, and social impact across the globe.
+                  inclusivity and social impact across the globe.
                 </p>
               </div>
             </ScrollReveal>
