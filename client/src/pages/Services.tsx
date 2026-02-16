@@ -45,7 +45,7 @@ const services = [
     ],
     details: [
       "Mixed-methods research design and implementation",
-      "Statistical analysis using SPSS, Stata, and R",
+      "Statistical analysis using SPSS, Stata and R",
       "Qualitative data analysis using NVivo and Atlas.ti",
       "GIS mapping and spatial analysis",
       "Knowledge management and dissemination",
@@ -56,7 +56,7 @@ const services = [
     icon: Target,
     title: "Monitoring, Evaluation, Accountability & Learning",
     image: IMAGES.servicesMeal,
-    desc: "We develop robust MEAL frameworks and systems that enable organizations to track progress, measure impact, ensure accountability, and facilitate continuous learning throughout program cycles.",
+    desc: "We develop robust MEAL frameworks and systems that enable organizations to track progress, measure impact, ensure accountability and facilitate continuous learning throughout program cycles.",
     features: [
       { icon: LineChart, label: "M&E Framework Development" },
       { icon: Target, label: "Theory of Change & Logframes" },
@@ -136,7 +136,7 @@ const services = [
     icon: Building2,
     title: "Organizational Development",
     image: IMAGES.servicesOrgDev,
-    desc: "We support organizations in strengthening their institutional capacity through strategic planning, governance improvement, and systems development for sustainable growth.",
+    desc: "We support organizations in strengthening their institutional capacity through strategic planning, governance improvement and systems development for sustainable growth.",
     features: [
       { icon: Target, label: "Strategic Planning" },
       { icon: Handshake, label: "Governance Strengthening" },
