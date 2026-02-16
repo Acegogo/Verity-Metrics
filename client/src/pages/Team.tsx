@@ -21,7 +21,7 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "FONDO K HASSAN",
+    name: "Fondo Hassan",
     position: "Founder and Executive Director",
     image: IMAGES.fondoHassan,
     expertise: [
@@ -31,7 +31,7 @@ const teamMembers: TeamMember[] = [
       "MEAL",
       "Research & Policy",
     ],
-    bio: "Fondo is a visionary leader and advocate for inclusive development with a mission to transform lives through innovation and empowerment. As Founder and Executive Director of Verity Metrics International, he delivers cutting-edge research, policy advisory, and inclusive development solutions across Africa. His work spans inclusive education, disability rights, health systems strengthening, and climate-resilient development. Fondo holds a Master's Degree and Bachelor's Degree in Special Needs Education from Maseno University, alongside a Diploma in Monitoring and Evaluation from Kenyatta University.",
+    bio: "Fondo is a visionary leader and advocate for inclusive development with a mission to transform lives through innovation and empowerment. As Founder and Executive Director of Verity Metrics International, he delivers cutting-edge research, policy advisory and inclusive development solutions across Africa. His work spans inclusive education, disability rights, health systems strengthening and climate-resilient development. Fondo holds a Master's Degree in Special Needs Education from Maseno University, alongside a Diploma in Monitoring and Evaluation from Kenyatta University.",
     achievements: [
       "Led early childhood disability screening and assistive technology integration programs reaching hundreds of children",
       "Coordinated inclusive remote learning programs through Student World in the United Kingdom",
@@ -39,7 +39,7 @@ const teamMembers: TeamMember[] = [
     ],
   },
   {
-    name: "GABRIEL MUREITHI",
+    name: "Gabriel Mureithi",
     position: "Project Management & Child Protection Expert",
     image: IMAGES.gabrielMureithi,
     expertise: [
@@ -49,7 +49,7 @@ const teamMembers: TeamMember[] = [
       "HR Management",
       "GBV Prevention",
     ],
-    bio: "Gabriel is a seasoned professional with over 16 years of experience in international non-governmental organizations, specializing in Child Protection, Project Management, and Human Resources. With a strong commitment to safeguarding vulnerable children, he has led high-impact projects focused on accountability, quality education, and gender-based violence prevention. Gabriel holds a Master's in Human Resources Management and a Bachelor's in Education from the University of Nairobi.",
+    bio: "Gabriel is a seasoned professional with over 16 years of experience in international non-governmental organizations, specializing in Child Protection, Project Management and Human Resources. With a strong commitment to safeguarding vulnerable children, he has led high-impact projects focused on accountability, quality education and gender-based violence prevention. Gabriel holds a Master's in Human Resources Management and a Bachelor's in Education from the University of Nairobi.",
     achievements: [
       "Authored the Kilifi County GBV Policy (2024)",
       "Reviewed the Kenya National Guidelines for Child Protection in Emergencies (2023)",
@@ -57,7 +57,7 @@ const teamMembers: TeamMember[] = [
     ],
   },
   {
-    name: "EVANS OCHIENG NUDIH",
+    name: "Evans Ochieng Nudih",
     position: "Senior Research & Policy Specialist",
     image: IMAGES.evansPlaceholder,
     expertise: [
@@ -67,7 +67,7 @@ const teamMembers: TeamMember[] = [
       "Economic Analysis",
       "Project Management",
     ],
-    bio: "Evans is a seasoned Senior Research and Policy Specialist with over 15 years of experience in research, monitoring and evaluation, health policy, and economic analysis. He began his career at the Ministry of Planning and National Development, contributing to Kenya's Economic Recovery Strategy and Public Expenditure Review. Evans currently serves as a Research Officer to the Chairperson of the Health Committee at the National Assembly of Kenya, providing technical research support and policy analysis.",
+    bio: "Evans is a seasoned Senior Research and Policy Specialist with over 15 years of experience in research, monitoring and evaluation, health policy and economic analysis. He began his career at the Ministry of Planning and National Development, contributing to Kenya's Economic Recovery Strategy and Public Expenditure Review. Evans currently serves as a Research Officer to the Chairperson of the Health Committee at the National Assembly of Kenya, providing technical research support and policy analysis.",
     achievements: [
       "Contributed to Kenya's Third Annual Progress Report of the Economic Recovery Strategy (ERS)",
       "Strengthened partnerships with government and civil society at DEEDS Kenya",
@@ -202,7 +202,7 @@ export default function Team() {
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
                 Our team is united by a commitment to inclusive development,
-                evidence-based solutions, and transformative impact. We believe
+                evidence-based solutions and transformative impact. We believe
                 that diverse perspectives and collaborative excellence drive
                 innovation and create lasting change in communities across
                 Africa.
@@ -219,7 +219,7 @@ export default function Team() {
                 {
                   icon: Award,
                   title: "Excellence",
-                  desc: "We maintain the highest standards in research, analysis, and implementation",
+                  desc: "We maintain the highest standards in research, analysis and implementation",
                 },
                 {
                   icon: Briefcase,
