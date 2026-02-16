@@ -17,7 +17,7 @@ const projects = [
     location: "Kenya",
     year: "2023-2024",
     image: IMAGES.disabilityForum,
-    desc: "Conducted disability inclusion sensitization forums across multiple counties in Kenya, reaching thousands of community members, teachers, and local government officials. The forums focused on promoting inclusive practices in education, healthcare, and community participation.",
+    desc: "Conducted disability inclusion sensitization forums across multiple counties in Kenya, reaching thousands of community members, teachers and local government officials. The forums focused on promoting inclusive practices in education, healthcare and community participation.",
     tags: ["Disability Inclusion", "Community Engagement", "Sensitization"],
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     location: "Kenya & Uganda",
     year: "2022-2024",
     image: IMAGES.academyStudent,
-    desc: "Delivered tailored capacity building programs for community-based organizations and local NGOs. Training covered project management, financial management, MEAL, and governance strengthening.",
+    desc: "Delivered tailored capacity building programs for community-based organizations and local NGOs. Training covered project management, financial management, MEAL and governance strengthening.",
     tags: ["Capacity Building", "Training", "Organizational Development"],
   },
   {
@@ -53,7 +53,7 @@ const projects = [
     location: "East Africa",
     year: "2023",
     image: IMAGES.servicesInclusion,
-    desc: "Conducted gender analysis across multiple programs and developed gender mainstreaming strategies. The project included gender audits, staff training, and the development of gender-responsive indicators.",
+    desc: "Conducted gender analysis across multiple programs and developed gender mainstreaming strategies. The project included gender audits, staff training and the development of gender-responsive indicators.",
     tags: ["Gender", "Mainstreaming", "Analysis"],
   },
   {
@@ -62,7 +62,7 @@ const projects = [
     location: "Kenya",
     year: "2022-2024",
     image: IMAGES.servicesOrgDev,
-    desc: "Facilitated strategic planning processes for various organizations, including needs assessments, stakeholder consultations, and the development of comprehensive 3-5 year strategic plans with implementation frameworks.",
+    desc: "Facilitated strategic planning processes for various organizations, including needs assessments, stakeholder consultations and the development of comprehensive 3-5 year strategic plans with implementation frameworks.",
     tags: ["Strategic Planning", "Organizational Development", "Consulting"],
   },
 ];
@@ -79,7 +79,7 @@ export default function Projects() {
     <Layout>
       <PageHero
         title="Our Projects"
-        subtitle="Explore our portfolio of impactful projects across research, MEAL, inclusion, and capacity building."
+        subtitle="Explore our portfolio of impactful projects across research, MEAL, inclusion and capacity building."
         image={IMAGES.projectsField}
         overlay="blue"
       />
