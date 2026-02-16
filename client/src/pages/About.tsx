@@ -42,10 +42,10 @@ export default function About() {
                     Verity Metrics International Limited (VMIL) is a consultancy firm that provides Research, Monitoring, Evaluation, Accountability and Learning (MEAL), Disability Inclusion and Gender, Special Needs Education consultancy, Capacity Building and Organizational Development services.
                   </p>
                   <p>
-                    We work with governments, non-governmental organizations, community-based organizations, and private sector entities to design and implement evidence-based programs that create sustainable impact.
+                    We work with governments, non-governmental organizations, community-based organizations and private sector entities to design and implement evidence-based programs that create sustainable impact.
                   </p>
                   <p>
-                    Our team brings together diverse expertise spanning research methodology, data analytics, inclusive development, education, and organizational management to deliver comprehensive solutions tailored to each client's unique needs.
+                    Our team brings together diverse expertise spanning research methodology, data analytics, inclusive development, education and organizational management to deliver comprehensive solutions tailored to each client's unique needs.
                   </p>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl font-heading font-bold mb-4">Our Mission</h3>
                 <p className="text-sky-100 leading-relaxed text-lg">
-                  To empower organizations and communities with innovative, data-driven solutions that promote sustainable development, inclusivity, and social impact across the globe.
+                  To empower organizations and communities with innovative, data-driven solutions that promote sustainable development, inclusivity and social impact across the globe.
                 </p>
               </div>
             </ScrollReveal>
