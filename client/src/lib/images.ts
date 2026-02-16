@@ -3,6 +3,11 @@ export const IMAGES = {
   // Official logo
   logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/MvbhcbtneGWHASlZ.png",
   
+  // Team member professional photos
+  fondoHassan: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/wOtrVIqvNNandeRm.jpeg",
+  gabrielMureithi: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/pmVcTfmMjKtvqACL.jpeg",
+  evansPlaceholder: "https://via.placeholder.com/400x500/4DBBEB/ffffff?text=Evans+Ochieng",
+  
   // Real team photos from field visits
   teamTraining: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/xsYesdshySeblJap.jpeg",
   teamFieldwork1: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/lRVSJtSnQPQgnpiH.jpeg",
@@ -10,7 +15,6 @@ export const IMAGES = {
   teamInterview: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/hUobBWZqSfTzvnAL.jpeg",
   teamCommunity: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/vCAmiOcalmJTZZcR.jpeg",
   teamWorkshop: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/gLVThIAyWppkdoAM.jpeg",
-  teamPresentation: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/UEoViXBupOqpSOQB.jpeg",
   teamEngagement: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/lzRfJXKFkIdIiKzT.jpeg",
   teamFieldwork3: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/FqKSJTDSwSTPdSDg.jpeg",
   

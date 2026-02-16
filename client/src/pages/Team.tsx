@@ -13,7 +13,7 @@ import { Award, Users, Briefcase } from "lucide-react";
 interface TeamMember {
   name: string;
   position: string;
-  bio: string[];
+  bio: string;
   expertise: string[];
   achievements?: string[];
   image: string;
@@ -23,50 +23,43 @@ const teamMembers: TeamMember[] = [
   {
     name: "FONDO K HASSAN",
     position: "Founder and Executive Director",
-    image: IMAGES.teamPresentation,
+    image: IMAGES.fondoHassan,
     expertise: [
       "Inclusive Education",
       "Disability Advocacy",
       "Program Strategy",
       "MEAL",
-      "Research & Policy Influence",
+      "Research & Policy",
     ],
-    bio: [
-      "Fondo Hassan is a visionary leader, strategist and advocate for inclusive development with a mission to transform lives through innovation, research and empowerment. As the Founder and Executive Director of Verity Metrics International Limited, Fondo has built a dynamic platform that delivers cutting-edge research, policy advisory, monitoring and evaluation and inclusive development solutions across Africa.",
-      "Driven by an unwavering commitment to social justice and equity, Fondo has led impactful initiatives spanning inclusive education, disability rights, health systems strengthening and climate-resilient development. His work has shaped transformative programs with organizations such as the Clinton Health Access Initiative's Building a World of Play initiative, where he pioneered early childhood disability screening, assistive technology integration and inclusive therapeutic play interventions that have reached hundreds of children with disabilities across Kenya.",
-      "Internationally, Fondo has coordinated inclusive remote learning programs through Student World in the United Kingdom, designing innovative, accessible education models for neurodivergent students. As a Lead Trainer for Core Life Skills under the We Can Work Program, he builds the employment readiness and social empowerment capacities of young persons with disabilities, positioning them for leadership and economic independence.",
-      "Fondo's expertise spans inclusive education program design, disability advocacy, Monitoring, Evaluation, Accountability and Learning (MEAL), project management, research design, policy influence, grant and proposal development and multi-stakeholder engagement. He has worked extensively across Kenya, delivering results-driven programs in Nairobi, Turkana, Kilifi, Kiambu, Central Kenya and Machakos and enabling grassroots organizations to secure critical funding from global donors, including the Government of Ireland and the Issroff Family Foundation.",
-      "Currently, Fondo also serves as a Project Officer at the Centre for Education Policy and Climate Justice (CEPCJ), where he champions the integration of education reform with climate justice advocacy, ensuring marginalized communities are centered in national policy dialogues.",
-      "Fondo holds a Master's Degree and a Bachelor's Degree in Special Needs Education from Maseno University, alongside a Diploma in Monitoring and Evaluation from Kenyatta University. His rare blend of visionary leadership, technical expertise and grassroots experience makes him not just a consultant, but a catalyst for lasting change.",
+    bio: "Fondo is a visionary leader and advocate for inclusive development with a mission to transform lives through innovation and empowerment. As Founder and Executive Director of Verity Metrics International, he delivers cutting-edge research, policy advisory, and inclusive development solutions across Africa. His work spans inclusive education, disability rights, health systems strengthening, and climate-resilient development. Fondo holds a Master's Degree and Bachelor's Degree in Special Needs Education from Maseno University, alongside a Diploma in Monitoring and Evaluation from Kenyatta University.",
+    achievements: [
+      "Led early childhood disability screening and assistive technology integration programs reaching hundreds of children",
+      "Coordinated inclusive remote learning programs through Student World in the United Kingdom",
+      "Lead Trainer for Core Life Skills under the We Can Work Program for youth with disabilities",
     ],
   },
   {
-    name: "Gabriel Mureithi",
+    name: "GABRIEL MUREITHI",
     position: "Project Management & Child Protection Expert",
-    image: IMAGES.teamTraining,
+    image: IMAGES.gabrielMureithi,
     expertise: [
       "Project Management",
       "Child Protection",
       "Safeguarding",
       "HR Management",
       "GBV Prevention",
-      "Policy Development",
     ],
-    bio: [
-      "Gabriel Mureithi is a seasoned professional with over 16 years of experience in international non-governmental organizations (INGOs), specializing in Child Protection, Project Management and Human Resources & Administration. With a strong commitment to safeguarding vulnerable children and advocating for their rights, Gabriel has led high-impact projects focused on accountability, quality education and gender-based violence (GBV) prevention.",
-      "Gabriel excels in cross-sector collaboration, having successfully built partnerships between organizations like World Vision Kenya and the Judiciary to enhance child protection services. He is also skilled in capacity building, having mentored graduate interns and trained staff on critical topics such as safeguarding, occupational safety and mental health.",
-      "Gabriel holds a Master's in Human Resources Management and a Bachelor's in Education (Arts) from the University of Nairobi. His expertise spans project coordination, advocacy and emergency response, making him a valuable asset to Verity Metrics International.",
-    ],
+    bio: "Gabriel is a seasoned professional with over 16 years of experience in international non-governmental organizations, specializing in Child Protection, Project Management, and Human Resources. With a strong commitment to safeguarding vulnerable children, he has led high-impact projects focused on accountability, quality education, and gender-based violence prevention. Gabriel holds a Master's in Human Resources Management and a Bachelor's in Education from the University of Nairobi.",
     achievements: [
-      "Authoring the Kilifi County GBV Policy (2024)",
-      "Reviewing the Kenya National Guidelines for Child Protection in Emergencies (2023)",
-      "Establishing innovative child protection initiatives recognized as best practices in the region",
+      "Authored the Kilifi County GBV Policy (2024)",
+      "Reviewed the Kenya National Guidelines for Child Protection in Emergencies (2023)",
+      "Built innovative child protection initiatives recognized as best practices in the region",
     ],
   },
   {
     name: "EVANS OCHIENG NUDIH",
     position: "Senior Research & Policy Specialist",
-    image: IMAGES.teamFieldwork1,
+    image: IMAGES.evansPlaceholder,
     expertise: [
       "Research Design",
       "Monitoring & Evaluation",
@@ -74,11 +67,11 @@ const teamMembers: TeamMember[] = [
       "Economic Analysis",
       "Project Management",
     ],
-    bio: [
-      "Evans Ochieng Nudih is a seasoned Senior Research and Policy Specialist with over 15 years of experience in research, monitoring and evaluation (M&E), health policy, economic analysis and project management. He holds a Bachelor of Arts degree in Economics and Political Science from the University of Nairobi.",
-      "Evans began his career at the Ministry of Planning and National Development, where he contributed to the preparation of Kenya's Third Annual Progress Report of the Economic Recovery Strategy (ERS) and the Public Expenditure Review (PER) 2007. He also supported the implementation of the National Integrated Monitoring and Evaluation System (NIMES), gaining valuable expertise in national development tracking and policy evaluation.",
-      "From 2008 to 2012, Evans worked at Disabled for Education and Economic Development (DEEDS) Kenya as a Senior Program Officer, Monitoring and Evaluation, where he strengthened partnerships with government and civil society, led compliance monitoring and enhanced organizational visibility through evidence-based reporting.",
-      "Evans currently serves as a Research Officer seconded to the Chairperson of the Health Committee at the National Assembly of Kenya, providing technical research support, policy analysis and legislative advisory services to influence health sector reforms. He brings a strong background in research design, monitoring and evaluation, health policy development, project risk management and strategic partnership building.",
+    bio: "Evans is a seasoned Senior Research and Policy Specialist with over 15 years of experience in research, monitoring and evaluation, health policy, and economic analysis. He began his career at the Ministry of Planning and National Development, contributing to Kenya's Economic Recovery Strategy and Public Expenditure Review. Evans currently serves as a Research Officer to the Chairperson of the Health Committee at the National Assembly of Kenya, providing technical research support and policy analysis.",
+    achievements: [
+      "Contributed to Kenya's Third Annual Progress Report of the Economic Recovery Strategy (ERS)",
+      "Strengthened partnerships with government and civil society at DEEDS Kenya",
+      "Provides legislative advisory services to influence health sector reforms",
     ],
   },
 ];
@@ -141,10 +134,10 @@ export default function Team() {
                     </div>
 
                     {/* Expertise */}
-                    <div className="mb-8">
-                      <h3 className="text-lg font-heading font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <Briefcase size={20} className="text-sky-500" />
-                        Areas of Expertise
+                    <div className="mb-6">
+                      <h3 className="text-sm font-heading font-bold text-slate-900 mb-3 flex items-center gap-2 uppercase tracking-wider">
+                        <Briefcase size={16} className="text-sky-500" />
+                        Expertise
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {member.expertise.map((skill, i) => (
@@ -153,7 +146,7 @@ export default function Team() {
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: i * 0.05 }}
-                            className="px-4 py-2 bg-sky-50 text-sky-700 rounded-full text-sm font-medium border border-sky-200"
+                            className="px-3 py-1 bg-sky-50 text-sky-700 rounded-full text-xs font-medium border border-sky-200"
                           >
                             {skill}
                           </motion.span>
@@ -162,26 +155,24 @@ export default function Team() {
                     </div>
 
                     {/* Bio */}
-                    <div className="space-y-4 text-slate-600 leading-relaxed mb-8">
-                      {member.bio.map((paragraph, i) => (
-                        <p key={i}>{paragraph}</p>
-                      ))}
-                    </div>
+                    <p className="text-slate-600 leading-relaxed mb-6">
+                      {member.bio}
+                    </p>
 
                     {/* Achievements */}
                     {member.achievements && (
                       <div>
-                        <h3 className="text-lg font-heading font-bold text-slate-900 mb-4 flex items-center gap-2">
-                          <Award size={20} className="text-sky-500" />
+                        <h3 className="text-sm font-heading font-bold text-slate-900 mb-3 flex items-center gap-2 uppercase tracking-wider">
+                          <Award size={16} className="text-sky-500" />
                           Key Achievements
                         </h3>
-                        <ul className="space-y-3">
+                        <ul className="space-y-2">
                           {member.achievements.map((achievement, i) => (
                             <li
                               key={i}
-                              className="flex gap-3 text-slate-600 leading-relaxed"
+                              className="flex gap-2 text-slate-600 text-sm leading-relaxed"
                             >
-                              <span className="text-sky-500 font-bold mt-1">
+                              <span className="text-sky-500 font-bold mt-0.5 flex-shrink-0">
                                 ✓
                               </span>
                               <span>{achievement}</span>
