@@ -45,7 +45,7 @@ const features = [
   {
     icon: BookOpen,
     title: "Comprehensive Resources",
-    desc: "Access to curated study materials, past papers, revision guides, and practice exercises.",
+    desc: "Access to curated study materials, past papers, revision guides and practice exercises.",
   },
   {
     icon: Clock,
@@ -55,7 +55,7 @@ const features = [
   {
     icon: Award,
     title: "Exam Preparation",
-    desc: "Focused exam preparation with mock tests, marking schemes, and examiner insights.",
+    desc: "Focused exam preparation with mock tests, marking schemes and examiner insights.",
   },
   {
     icon: Globe,
@@ -105,7 +105,7 @@ export default function VerityAcademy() {
                   Empowering Students for Success
                 </h2>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Verity Academy is the educational arm of Verity Metrics International, dedicated to providing high-quality GCSE and A-Level tutoring services. Our experienced tutors deliver personalized instruction that helps students build confidence, master key concepts, and achieve their academic goals.
+                  Verity Academy is the educational arm of Verity Metrics International, dedicated to providing high-quality GCSE and A-Level tutoring services. Our experienced tutors deliver personalized instruction that helps students build confidence, master key concepts and achieve their academic goals.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   Whether preparing for exams or seeking to strengthen understanding of core subjects, our structured approach ensures every student receives the support they need to excel.
