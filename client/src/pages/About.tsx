@@ -13,7 +13,7 @@ const values = [
   { icon: Lightbulb, title: "Innovation", desc: "We embrace creative and forward-thinking approaches to solving complex development challenges." },
   { icon: Users, title: "Inclusivity", desc: "We champion diversity and ensure that all voices, especially marginalized groups, are heard and valued." },
   { icon: Heart, title: "Commitment", desc: "We are dedicated to delivering quality results and creating meaningful, lasting impact." },
-  { icon: Target, title: "Excellence", desc: "We strive for the highest quality in our research, analysis, and consulting services." },
+  { icon: Target, title: "Excellence", desc: "We strive for the highest quality in our research, analysis and consulting services." },
   { icon: Eye, title: "Accountability", desc: "We take responsibility for our actions and maintain transparency with our partners and stakeholders." },
 ];
 
@@ -22,7 +22,7 @@ export default function About() {
     <Layout>
       <PageHero
         title="About Us"
-        subtitle="Learn about our mission, values, and the team driving sustainable development impact."
+        subtitle="Learn about our mission, values and the team driving sustainable development impact."
         image={IMAGES.aboutHero}
         overlay="blue"
       />
