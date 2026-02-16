@@ -24,7 +24,7 @@ const services = [
   {
     icon: BarChart3,
     title: "Research & Analytics",
-    desc: "Comprehensive research design, data collection, analysis, and reporting to inform evidence-based decision making.",
+    desc: "Comprehensive research design, data collection, analysis and reporting to inform evidence-based decision making.",
     image: IMAGES.servicesResearch,
   },
   {
@@ -185,8 +185,8 @@ export default function Home() {
                   Driving Sustainable Development Through Evidence
                 </h2>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Verity Metrics International Limited (VMIL) is a development
-                  consulting firm that provides Research, Monitoring, Evaluation,
+                  Verity Metrics International Limited (VMIL) is a consultancy
+                  firm that provides Research, Monitoring, Evaluation,
                   Accountability and Learning (MEAL), Disability Inclusion and
                   Gender, Special Needs Education consultancy, Capacity Building
                   and Organizational Development services.
