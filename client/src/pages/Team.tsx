@@ -7,8 +7,12 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import { IMAGES } from "@/lib/images";
-import { motion } from "framer-motion";
+import AnimatedHeading from "@/components/AnimatedHeading";
+import { AnimatePresence, motion } from "framer-motion";
+import { useMemo, useState } from "react";
 import { Award, Users, Briefcase } from "lucide-react";
+
+type TeamGroup = "Leadership" | "Consulting" | "Operations";
 
 interface TeamMember {
   name: string;
@@ -17,11 +21,13 @@ interface TeamMember {
   expertise: string[];
   achievements?: string[];
   image?: string;
+  group: TeamGroup;
 }
 
 const teamMembers: TeamMember[] = [
   {
     name: "Fondo Hassan Kalama",
+    group: "Leadership",
     position: "Founder & Executive Director",
     image: IMAGES.fondoHassan,
     expertise: [
@@ -41,6 +47,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Felix Okoth Otieno",
+    group: "Consulting",
     position: "Associate Consultant - Inclusive Education & Disability Inclusion",
     image: IMAGES.felixOtieno,
     expertise: [
@@ -59,6 +66,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Gabriel Mureithi",
+    group: "Consulting",
     position: "Project Management & Child Protection Expert",
     image: IMAGES.gabrielMureithi,
     expertise: [
@@ -77,6 +85,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Evans Ochieng Nudih",
+    group: "Consulting",
     position: "Senior Research & Policy Specialist",
     image: IMAGES.evansNudih,
     expertise: [
@@ -95,6 +104,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Abraham Shivachi",
+    group: "Consulting",
     position: "Education Specialist & Leadership Coach",
     expertise: [
       "Education Quality",
@@ -112,6 +122,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Daniel Kheri Kazungu",
+    group: "Consulting",
     position: "MEAL Specialist & Program Development Expert",
     expertise: [
       "Monitoring & Evaluation",
@@ -129,6 +140,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Chungune June Chopetta",
+    group: "Operations",
     position: "Operations & Logistics Associate",
     image: IMAGES.juneChopetta,
     expertise: [
@@ -147,7 +159,27 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
+const GROUP_ORDER: TeamGroup[] = ["Leadership", "Consulting", "Operations"];
+
+const GROUP_LABELS: Record<TeamGroup, string> = {
+  Leadership: "Leadership",
+  Consulting: "Consulting Team",
+  Operations: "Operations",
+};
+
 export default function Team() {
+  const [active, setActive] = useState<TeamGroup | "All">("All");
+
+  const filters = useMemo(() => {
+    const present = GROUP_ORDER.filter((g) => teamMembers.some((m) => m.group === g));
+    return ["All" as const, ...present];
+  }, []);
+
+  const visible = useMemo(
+    () => (active === "All" ? teamMembers : teamMembers.filter((m) => m.group === active)),
+    [active],
+  );
+
   return (
     <Layout>
       <PageHero
@@ -160,13 +192,59 @@ export default function Team() {
       {/* Team Members Section */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container">
-          <div className="space-y-16">
-            {teamMembers.map((member, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
+          {/* Filter by group */}
+          <ScrollReveal>
+            <div className="mb-6 flex flex-wrap justify-center gap-2.5">
+              {filters.map((group) => {
+                const isActive = group === active;
+                const label = group === "All" ? "Everyone" : GROUP_LABELS[group];
+                return (
+                  <button
+                    key={group}
+                    type="button"
+                    onClick={() => setActive(group)}
+                    aria-pressed={isActive}
+                    className={`relative rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
+                      isActive
+                        ? "text-white"
+                        : "border border-sky-200 bg-white text-sky-700 hover:border-brand-periwinkle hover:text-brand-indigo"
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="team-filter-pill"
+                        className="absolute inset-0 rounded-full bg-brand-flow"
+                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      />
+                    )}
+                    <span className="relative z-10">{label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </ScrollReveal>
+
+          <p className="mb-14 text-center text-sm text-slate-500" aria-live="polite">
+            Showing <span className="font-semibold text-sky-700">{visible.length}</span> of{" "}
+            {teamMembers.length} people
+            {active !== "All" && (
+              <>
+                {" in "}
+                <span className="font-semibold text-sky-700">{GROUP_LABELS[active]}</span>
+              </>
+            )}
+          </p>
+
+          <motion.div layout className="space-y-16">
+            <AnimatePresence mode="popLayout">
+            {visible.map((member, index) => (
+              <motion.div
+                  key={member.name}
+                  layout
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{ duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
                   className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-start ${
                     index % 2 === 1 ? "lg:grid-flow-dense" : ""
                   }`}
@@ -274,9 +352,9 @@ export default function Team() {
                     )}
                   </div>
                 </motion.div>
-              </ScrollReveal>
             ))}
-          </div>
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 
@@ -288,9 +366,11 @@ export default function Team() {
               <span className="eyebrow">
                 Our Culture
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
-                Driven by Shared Values
-              </h2>
+              <AnimatedHeading
+                text="Driven by Shared Values"
+                highlight={["values"]}
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6"
+              />
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
                 Our team is united by a commitment to inclusive development,
                 evidence-based solutions and transformative impact. We believe

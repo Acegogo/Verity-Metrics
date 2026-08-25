@@ -153,9 +153,10 @@ export default function Projects() {
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="eyebrow">Our Portfolio</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
-                Featured Projects
-              </h2>
+              <AnimatedHeading
+                text="Featured Projects"
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4"
+              />
               <p className="text-slate-600 leading-relaxed">
                 A selection of our recent engagements demonstrating our expertise across multiple sectors.
               </p>
@@ -283,9 +284,10 @@ export default function Projects() {
                 <span className="eyebrow">
                   Recognition
                 </span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
-                  Winner, i3F Business Grant Competition
-                </h2>
+                <AnimatedHeading
+                text="Winner, i3F Business Grant Competition"
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6"
+              />
                 <p className="text-slate-600 leading-relaxed mb-6">
                   After six weeks of business training and assessment, Verity Metrics International
                   emerged first in the business plan stage and secured a top two position in the final

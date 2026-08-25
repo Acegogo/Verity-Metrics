@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import { IMAGES } from "@/lib/images";
+import AnimatedHeading from "@/components/AnimatedHeading";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Mail, ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -117,9 +118,10 @@ export default function Careers() {
               <span className="eyebrow">
                 Join Us
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
-                Work With Verity Metrics
-              </h2>
+              <AnimatedHeading
+                text="Work With Verity Metrics"
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4"
+              />
               <p className="text-slate-600 leading-relaxed">
                 We bring together researchers, evaluators and inclusion specialists who believe
                 development decisions should be built on credible evidence.

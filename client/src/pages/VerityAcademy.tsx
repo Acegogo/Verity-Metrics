@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import { IMAGES } from "@/lib/images";
+import AnimatedHeading from "@/components/AnimatedHeading";
 import { Link } from "wouter";
 import {
   GraduationCap,
@@ -101,9 +102,11 @@ export default function VerityAcademy() {
                 <span className="eyebrow">
                   Academic Excellence
                 </span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
-                  Empowering Students for Success
-                </h2>
+                <AnimatedHeading
+                text="Empowering Students for Success"
+                highlight={["students"]}
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6"
+              />
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Verity Academy is the educational arm of Verity Metrics International, dedicated to providing high-quality GCSE and A-Level tutoring services. Our experienced tutors deliver personalized instruction that helps students build confidence, master key concepts and achieve their academic goals.
                 </p>
@@ -152,9 +155,10 @@ export default function VerityAcademy() {
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="eyebrow">Why Choose Us</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
-                The Verity Academy Advantage
-              </h2>
+              <AnimatedHeading
+                text="The Verity Academy Advantage"
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4"
+              />
               <p className="text-slate-600 leading-relaxed">
                 Our approach combines expert instruction with modern technology to create an engaging learning experience.
               </p>
@@ -192,9 +196,10 @@ export default function VerityAcademy() {
             <ScrollReveal direction="right">
               <div>
                 <span className="eyebrow">Subjects Offered</span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
-                  Comprehensive Subject Coverage
-                </h2>
+                <AnimatedHeading
+                text="Comprehensive Subject Coverage"
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6"
+              />
                 <p className="text-slate-600 leading-relaxed mb-6">
                   We offer tutoring across a wide range of GCSE and A-Level subjects, with experienced tutors who specialize in their respective fields.
                 </p>
@@ -221,15 +226,17 @@ export default function VerityAcademy() {
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="eyebrow">Testimonials</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
-                What Our Students Say
-              </h2>
+              <AnimatedHeading
+                text="What Our Students Say"
+                highlight={["students"]}
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4"
+              />
             </div>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {testimonials.map((t, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="bg-white rounded-xl p-6 shadow-sm h-full flex flex-col">
+                <div className="card-lift bg-white rounded-xl p-6 shadow-sm h-full flex flex-col">
                   <div className="flex gap-1 mb-4">
                     {Array.from({ length: t.rating }).map((_, j) => (
                       <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />
@@ -248,9 +255,10 @@ export default function VerityAcademy() {
       <section className="py-20 bg-gradient-to-br from-sky-700 to-sky-800">
         <div className="container text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Ready to Start Learning?
-            </h2>
+            <AnimatedHeading
+                text="Ready to Start Learning?"
+                className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"
+              />
             <p className="text-sky-200 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
               Join Verity Academy today and take the first step towards academic excellence.
             </p>

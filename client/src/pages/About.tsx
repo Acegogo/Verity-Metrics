@@ -6,6 +6,10 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import { IMAGES } from "@/lib/images";
+import Lightbox from "@/components/Lightbox";
+import AnimatedHeading from "@/components/AnimatedHeading";
+import { useState } from "react";
+import { Maximize2 } from "lucide-react";
 import { Target, Eye, Heart, Shield, Lightbulb, Users } from "lucide-react";
 
 const values = [
@@ -17,7 +21,16 @@ const values = [
   { icon: Eye, title: "Accountability", desc: "We take responsibility for our actions and maintain transparency with our partners and stakeholders." },
 ];
 
+const galleryImages = [
+  { src: IMAGES.teamCommunity, alt: "Community engagement session on disability inclusion" },
+  { src: IMAGES.teamInterview, alt: "Field interview during an inclusion assessment" },
+  { src: IMAGES.teamEngagement, alt: "Stakeholder engagement with school and community members" },
+  { src: IMAGES.teamFieldwork2, alt: "Fieldwork supporting inclusive education practice" },
+];
+
 export default function About() {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
   return (
     <Layout>
       <PageHero
@@ -34,9 +47,10 @@ export default function About() {
             <ScrollReveal direction="left">
               <div>
                 <span className="eyebrow">Who We Are</span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
-                  Verity Metrics International Limited
-                </h2>
+                <AnimatedHeading
+                text="Verity Metrics International Limited"
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6"
+              />
                 <div className="space-y-4 text-slate-600 leading-relaxed">
                   <p>
                     Verity Metrics International Limited (VMIL) is a consultancy firm that provides Research, Monitoring, Evaluation, Accountability and Learning (MEAL), Disability Inclusion and Gender, Special Needs Education consultancy, Capacity Building and Organizational Development services.
@@ -71,9 +85,10 @@ export default function About() {
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="eyebrow">Our Purpose</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2">
-                Mission & Vision
-              </h2>
+              <AnimatedHeading
+                text="Mission & Vision"
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2"
+              />
             </div>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -109,9 +124,11 @@ export default function About() {
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="eyebrow">What Guides Us</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
-                Our Core Values
-              </h2>
+              <AnimatedHeading
+                text="Our Core Values"
+                highlight={["values"]}
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4"
+              />
               <p className="text-slate-600 leading-relaxed">
                 These principles guide every engagement and decision we make.
               </p>
@@ -139,23 +156,49 @@ export default function About() {
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="eyebrow">Our Impact</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
-                Disability Inclusion in Action
-              </h2>
+              <AnimatedHeading
+                text="Disability Inclusion in Action"
+                highlight={["Inclusion"]}
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4"
+              />
               <p className="text-slate-600 leading-relaxed">
                 We are committed to promoting inclusive practices that ensure equitable participation for persons with disabilities.
               </p>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[IMAGES.teamCommunity, IMAGES.teamInterview, IMAGES.teamEngagement, IMAGES.teamFieldwork2].map((img, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow aspect-square">
-                  <img loading="lazy" decoding="async" src={img} alt={`Inclusion work ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                </div>
+            {galleryImages.map((image, i) => (
+              <ScrollReveal key={image.src} delay={i * 0.1}>
+                <button
+                  type="button"
+                  onClick={() => setLightboxIndex(i)}
+                  aria-label={`View larger: ${image.alt}`}
+                  className="group relative block aspect-square w-full overflow-hidden rounded-xl shadow-md transition-shadow hover:shadow-xl"
+                >
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src={image.src}
+                    alt={image.alt}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Reveal on hover so it is clear these open */}
+                  <span className="absolute inset-0 flex items-center justify-center bg-brand-navy/0 opacity-0 transition-all duration-300 group-hover:bg-brand-navy/45 group-hover:opacity-100 group-focus-visible:bg-brand-navy/45 group-focus-visible:opacity-100">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/15 text-white backdrop-blur-sm">
+                      <Maximize2 size={18} />
+                    </span>
+                  </span>
+                </button>
               </ScrollReveal>
             ))}
           </div>
+
+          <Lightbox
+            images={galleryImages}
+            index={lightboxIndex}
+            onClose={() => setLightboxIndex(null)}
+            onIndexChange={setLightboxIndex}
+          />
         </div>
       </section>
     </Layout>

@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import { IMAGES } from "@/lib/images";
+import AnimatedHeading from "@/components/AnimatedHeading";
 import { useState } from "react";
 import { toast } from "sonner";
 import {
@@ -138,9 +139,10 @@ export default function Contact() {
             <div className="lg:col-span-3">
               <ScrollReveal direction="left">
                 <span className="eyebrow">Send Us a Message</span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
-                  We'd Love to Hear From You
-                </h2>
+                <AnimatedHeading
+                text="We'd Love to Hear From You"
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6"
+              />
                 <form
                   name="contact"
                   method="POST"

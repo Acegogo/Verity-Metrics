@@ -193,9 +193,11 @@ export default function Home() {
                 <span className="eyebrow">
                   Who We Are
                 </span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
-                  Driving Sustainable Development Through Evidence
-                </h2>
+                <AnimatedHeading
+                text="Driving Sustainable Development Through Evidence"
+                highlight={["evidence"]}
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6"
+              />
                 <p className="text-slate-600 leading-relaxed mb-6">
                   Verity Metrics International Limited (VMIL) is a consultancy
                   firm that provides Research, Monitoring, Evaluation,
@@ -239,9 +241,10 @@ export default function Home() {
               <span className="eyebrow">
                 What We Do
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
-                Our Core Services
-              </h2>
+              <AnimatedHeading
+                text="Our Core Services"
+                className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4"
+              />
               <p className="text-slate-600 leading-relaxed">
                 We offer a comprehensive range of development consulting services
                 designed to create measurable, lasting impact.
