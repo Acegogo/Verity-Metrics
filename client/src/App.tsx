@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Router as WouterRouter, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -13,9 +13,10 @@ import VerityAcademy from "./pages/VerityAcademy";
 import Careers from "./pages/Careers";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
+import DocumentHead from "./components/DocumentHead";
 import Contact from "./pages/Contact";
 
-function Router() {
+function Routes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -32,17 +33,25 @@ function Router() {
   );
 }
 
-function App() {
+interface AppProps {
+  /** Set only by the prerender step, so wouter can resolve a route with no browser. */
+  ssrPath?: string;
+}
+
+function App({ ssrPath }: AppProps) {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <Toaster />
-          <ScrollToTop />
-          <PageTransition>
-            <Router />
-          </PageTransition>
-        </TooltipProvider>
+        <WouterRouter ssrPath={ssrPath}>
+          <TooltipProvider>
+            <Toaster />
+            <DocumentHead />
+            <ScrollToTop />
+            <PageTransition>
+              <Routes />
+            </PageTransition>
+          </TooltipProvider>
+        </WouterRouter>
       </ThemeProvider>
     </ErrorBoundary>
   );
