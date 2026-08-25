@@ -122,7 +122,7 @@ export default function Projects() {
               <ScrollReveal key={i} delay={i * 0.08}>
                 <div className="group bg-white border border-sky-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                   <div className="relative h-56 overflow-hidden">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -173,7 +173,7 @@ export default function Projects() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
               <div className="rounded-2xl overflow-hidden shadow-xl">
-                <img src={IMAGES.projectsField} alt="VMIL Recognition" className="w-full object-cover" />
+                <img loading="lazy" decoding="async" src={IMAGES.projectsField} alt="VMIL Recognition" className="w-full object-cover" />
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right">

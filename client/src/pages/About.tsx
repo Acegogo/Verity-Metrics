@@ -52,7 +52,7 @@ export default function About() {
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div className="relative">
-                <img
+                <img loading="lazy" decoding="async"
                   src={IMAGES.teamEngagement}
                   alt="Verity Metrics team engagement and workshop"
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
@@ -151,7 +151,7 @@ export default function About() {
             {[IMAGES.teamCommunity, IMAGES.teamInterview, IMAGES.teamEngagement, IMAGES.teamFieldwork2].map((img, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow aspect-square">
-                  <img src={img} alt={`Inclusion work ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  <img loading="lazy" decoding="async" src={img} alt={`Inclusion work ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
               </ScrollReveal>
             ))}

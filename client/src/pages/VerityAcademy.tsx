@@ -128,7 +128,7 @@ export default function VerityAcademy() {
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div className="relative">
-                <img
+                <img loading="lazy" decoding="async"
                   src={IMAGES.academyClassroom}
                   alt="Verity Academy virtual classroom"
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
@@ -182,7 +182,7 @@ export default function VerityAcademy() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <ScrollReveal direction="left">
               <div className="relative">
-                <img
+                <img loading="lazy" decoding="async"
                   src={IMAGES.academyStudent}
                   alt="Student studying"
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"

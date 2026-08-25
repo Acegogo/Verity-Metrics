@@ -111,7 +111,7 @@ export default function Team() {
                       className="relative"
                     >
                       <div className="absolute -inset-4 bg-gradient-to-br from-sky-200 to-sky-100 rounded-2xl blur-xl opacity-40" />
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={member.image}
                         alt={member.name}
                         className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[3/4]"

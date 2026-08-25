@@ -1,42 +1,53 @@
-// CDN URLs for all images used in the website
+/*
+ * All images are served from this repository (client/public/images).
+ *
+ * They were previously hotlinked to an external AI-tool CDN, which left the
+ * site's entire imagery dependent on a third-party host nobody here controls,
+ * and the heroes weighed 5-7 MB each. They are now self-hosted and resized:
+ * 85.8 MB of source material down to roughly 5 MB.
+ *
+ * The heroes and service illustrations are AI-generated stock, inherited from
+ * the February rebuild. Replace them with real photographs of Verity Metrics
+ * work when they are available.
+ */
 export const IMAGES = {
-  // Official logo
-  logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/MvbhcbtneGWHASlZ.png",
-  
-  // Team member professional photos
-  fondoHassan: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/wOtrVIqvNNandeRm.jpeg",
-  gabrielMureithi: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/pmVcTfmMjKtvqACL.jpeg",
+  // Brand
+  logo: "/images/logo.png",
+
+  // Team portraits
+  fondoHassan: "/images/team/fondo-hassan.jpg",
+  gabrielMureithi: "/images/team/gabriel-mureithi.jpg",
   evansNudih: "/images/team/evans-nudih.jpg",
-  
-  // Real team photos from field visits
-  teamTraining: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/xsYesdshySeblJap.jpeg",
-  teamFieldwork1: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/lRVSJtSnQPQgnpiH.jpeg",
-  teamFieldwork2: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/drtTHysQUrzJzTXH.jpeg",
-  teamInterview: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/hUobBWZqSfTzvnAL.jpeg",
-  teamCommunity: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/vCAmiOcalmJTZZcR.jpeg",
-  teamWorkshop: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/gLVThIAyWppkdoAM.jpeg",
-  teamEngagement: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/lzRfJXKFkIdIiKzT.jpeg",
-  teamFieldwork3: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/FqKSJTDSwSTPdSDg.jpeg",
-  
-  // Hero images (AI-generated for visual appeal)
-  heroHome: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/fGQNdyhDiMgsRKSy.jpg",
-  heroAcademy: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/RqtfejiHHSUIKtEA.jpg",
-  aboutHero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/rOktbTCkQZDwMyJV.jpg",
-  contactHero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/CGDhJLPqDRDRvpZJ.jpg",
-  
-  // Services images (AI-generated)
-  servicesResearch: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/LFrZwxaiaXtwpMlh.jpg",
-  servicesMeal: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/UGwdEEmRcOvFPSFq.jpg",
-  servicesInclusion: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/BWEJxKTDugXtzvCT.jpg",
-  servicesEducation: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/DaPMkxTypbZBytcX.jpg",
-  servicesCapacity: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/TBqshtwjeFiQEyHR.jpg",
-  servicesOrgDev: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/KlpNiSjZirxLkEQE.jpg",
-  
-  // Academy images (AI-generated)
-  academyClassroom: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/HstrqAzPHrmmwiqE.jpg",
-  academyStudent: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/XkQzvYQdkFYmIZAO.jpg",
-  
-  // Project & disability images
-  disabilityForum: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/TtyXxFoeOLiiwOox.jpg",
-  projectsField: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/lxLyzTDpmVsLUSvU.jpg",
+
+  // Photographs from field visits and training
+  teamTraining: "/images/team/team-training.jpg",
+  teamFieldwork1: "/images/team/team-fieldwork-1.jpg",
+  teamFieldwork2: "/images/team/team-fieldwork-2.jpg",
+  teamFieldwork3: "/images/team/team-fieldwork-3.jpg",
+  teamInterview: "/images/team/team-interview.jpg",
+  teamCommunity: "/images/team/team-community.jpg",
+  teamWorkshop: "/images/team/team-workshop.jpg",
+  teamEngagement: "/images/team/team-engagement.jpg",
+
+  // Page heroes
+  heroHome: "/images/hero/home.jpg",
+  heroAcademy: "/images/hero/academy.jpg",
+  aboutHero: "/images/hero/about.jpg",
+  contactHero: "/images/hero/contact.jpg",
+  projectsField: "/images/hero/projects.jpg",
+
+  // Service illustrations
+  servicesResearch: "/images/services/research.jpg",
+  servicesMeal: "/images/services/meal.jpg",
+  servicesInclusion: "/images/services/inclusion.jpg",
+  servicesEducation: "/images/services/education.jpg",
+  servicesCapacity: "/images/services/capacity.jpg",
+  servicesOrgDev: "/images/services/organisational-development.jpg",
+
+  // Academy
+  academyClassroom: "/images/academy/classroom.jpg",
+  academyStudent: "/images/academy/student.jpg",
+
+  // Projects
+  disabilityForum: "/images/projects/disability-forum.jpg",
 } as const;

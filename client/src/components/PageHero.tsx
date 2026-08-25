@@ -18,6 +18,9 @@ export default function PageHero({ title, subtitle, image, overlay = "dark" }: P
       <img
         src={image}
         alt=""
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className={`absolute inset-0 ${overlayClass}`} />

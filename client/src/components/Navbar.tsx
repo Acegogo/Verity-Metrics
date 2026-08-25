@@ -40,6 +40,9 @@ export default function Navbar() {
       <div className="container flex items-center justify-between h-[72px]">
         <Link href="/" className="flex items-center no-underline">
           <img
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             src={IMAGES.logo}
             alt="Verity Metrics International"
             className="h-16 w-auto"

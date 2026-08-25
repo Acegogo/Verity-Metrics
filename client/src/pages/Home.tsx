@@ -77,6 +77,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <img
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           src={IMAGES.heroHome}
           alt="Verity Metrics team in the field"
           className="absolute inset-0 w-full h-full object-cover"
@@ -165,7 +168,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <ScrollReveal direction="left">
               <div className="relative">
-                <img
+                <img loading="lazy" decoding="async"
                   src={IMAGES.aboutHero}
                   alt="About Verity Metrics"
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
@@ -241,7 +244,7 @@ export default function Home() {
               <ScrollReveal key={i} delay={i * 0.08}>
                 <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -346,7 +349,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="relative py-20 md:py-28 overflow-hidden">
-        <img
+        <img loading="lazy" decoding="async"
           src={IMAGES.teamFieldwork1}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"

@@ -175,7 +175,7 @@ export default function Services() {
               {/* Image side */}
               <ScrollReveal direction={i % 2 === 0 ? "left" : "right"} className={i % 2 !== 0 ? "lg:order-2" : ""}>
                 <div className="relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={service.image}
                     alt={service.title}
                     className="rounded-2xl shadow-xl w-full object-cover aspect-[16/10]"
