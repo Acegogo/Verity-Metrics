@@ -18,6 +18,8 @@ export const IMAGES = {
   fondoHassan: "/images/team/fondo-hassan.jpg",
   gabrielMureithi: "/images/team/gabriel-mureithi.jpg",
   evansNudih: "/images/team/evans-nudih.jpg",
+  felixOtieno: "/images/team/felix-otieno.jpg",
+  juneChopetta: "/images/team/june-chopetta.jpg",
 
   // Photographs from field visits and training
   teamTraining: "/images/team/team-training.jpg",
@@ -50,4 +52,12 @@ export const IMAGES = {
 
   // Projects
   disabilityForum: "/images/projects/disability-forum.jpg",
+  i3fAward: "/images/projects/i3f-award.jpg",
+  staraCbe1: "/images/projects/stara-cbe-1.jpg",
+  staraCbe2: "/images/projects/stara-cbe-2.jpg",
+  staraCbe3: "/images/projects/stara-cbe-3.jpg",
+  tassiaForum1: "/images/projects/tassia-forum-1.jpg",
+  tassiaForum2: "/images/projects/tassia-forum-2.jpg",
+  tassiaForum3: "/images/projects/tassia-forum-3.jpg",
+  tassiaForum4: "/images/projects/tassia-forum-4.jpg",
 } as const;

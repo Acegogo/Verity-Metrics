@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/team", label: "Team" },
   { href: "/projects", label: "Projects" },
   { href: "/verity-academy", label: "Verity Academy" },
+  { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
 ];
 

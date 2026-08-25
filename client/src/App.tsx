@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Team from "./pages/Team";
 import Projects from "./pages/Projects";
 import VerityAcademy from "./pages/VerityAcademy";
+import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/team" component={Team} />
       <Route path="/projects" component={Projects} />
       <Route path="/verity-academy" component={VerityAcademy} />
+      <Route path="/careers" component={Careers} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />

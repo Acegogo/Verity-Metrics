@@ -12,13 +12,22 @@ import { Link } from "wouter";
 
 const projects = [
   {
-    title: "Disability Inclusion Sensitization Forums",
-    client: "Various Partners",
-    location: "Kenya",
-    year: "2023-2024",
-    image: IMAGES.disabilityForum,
-    desc: "Conducted disability inclusion sensitization forums across multiple counties in Kenya, reaching thousands of community members, teachers and local government officials. The forums focused on promoting inclusive practices in education, healthcare and community participation.",
-    tags: ["Disability Inclusion", "Community Engagement", "Sensitization"],
+    title: "Competency Based Education (CBE) Implementation Assessment",
+    client: "Stara Rescue Centre and School",
+    location: "Nairobi, Kenya",
+    year: "2025",
+    image: IMAGES.staraCbe1,
+    desc: "Stakeholder engagement during the Competency Based Education Implementation Assessment at Stara Rescue School. Through focus group discussions, classroom observations and consultations, Verity Metrics International Limited gathered evidence to inform practical recommendations for strengthening teaching and learning.",
+    tags: ["Competency Based Education", "Classroom Observation", "Stakeholder Engagement"],
+  },
+  {
+    title: "Disability Inclusion Sensitization Forum",
+    client: "St. Margaret Catholic School, Tassia",
+    location: "Nairobi, Kenya",
+    year: "2025",
+    image: IMAGES.tassiaForum1,
+    desc: "A three-week sensitization forum on disability awareness and inclusive education, equipping educators, staff and learners with the knowledge and tools to foster an inclusive school environment. Sessions covered inclusive communication, models of disability and practical classroom strategies.",
+    tags: ["Disability Inclusion", "Inclusive Education", "Teacher Training"],
   },
   {
     title: "MEAL Framework Development for Education Programs",
@@ -173,18 +182,42 @@ export default function Projects() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
               <div className="rounded-2xl overflow-hidden shadow-xl">
-                <img loading="lazy" decoding="async" src={IMAGES.projectsField} alt="VMIL Recognition" className="w-full object-cover" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={IMAGES.i3fAward}
+                  alt="Verity Metrics International receiving the i3F Business Grant recognition"
+                  className="w-full object-cover"
+                />
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div>
-                <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">Recognition</span>
+                <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+                  Recognition
+                </span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
-                  Making a Difference
+                  Winner, i3F Business Grant Competition
                 </h2>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Our commitment to quality and impact has been recognized by partners and stakeholders across the development sector. We continue to push boundaries in delivering evidence-based solutions that create lasting change.
+                  After six weeks of business training and assessment, Verity Metrics International
+                  emerged first in the business plan stage and secured a top two position in the final
+                  pitch round of the Imagine &middot; Inspire &middot; Innovate Foundation (i3F)
+                  Business Grant Competition.
                 </p>
+                <ul className="space-y-2 mb-8">
+                  {[
+                    "First place in the business plan stage",
+                    "Top two finalist in the pitch competition",
+                    "Selected from Kenya's top twelve ventures",
+                    "One of only five finalists awarded grants",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2 text-slate-600 text-sm leading-relaxed">
+                      <span className="text-sky-500 font-bold mt-0.5 flex-shrink-0">&bull;</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg no-underline"
@@ -196,6 +229,7 @@ export default function Projects() {
           </div>
         </div>
       </section>
+
     </Layout>
   );
 }

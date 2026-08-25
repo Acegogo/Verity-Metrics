@@ -16,26 +16,45 @@ interface TeamMember {
   bio: string;
   expertise: string[];
   achievements?: string[];
-  image: string;
+  image?: string;
 }
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Fondo Hassan",
-    position: "Founder and Executive Director",
+    name: "Fondo Hassan Kalama",
+    position: "Founder & Executive Director",
     image: IMAGES.fondoHassan,
     expertise: [
+      "Research & MEAL",
       "Inclusive Education",
-      "Disability Advocacy",
-      "Program Strategy",
-      "MEAL",
-      "Research & Policy",
+      "Disability Inclusion",
+      "Policy Analysis",
+      "Impact Evaluation",
+      "Strategic Planning",
     ],
-    bio: "Fondo is a visionary leader and advocate for inclusive development with a mission to transform lives through innovation and empowerment. As Founder and Executive Director of Verity Metrics International, he delivers cutting-edge research, policy advisory and inclusive development solutions across Africa. His work spans inclusive education, disability rights, health systems strengthening and climate-resilient development. Fondo holds a Master's Degree in Special Needs Education from Maseno University, alongside a Diploma in Monitoring and Evaluation from Kenyatta University.",
+    bio: "Fondo Hassan Kalama is an Inclusive Education Specialist, Disability Inclusion Expert, Researcher and MEAL practitioner whose work sits at the intersection of evidence generation, policy influence and systems strengthening. As Founder and Executive Director of Verity Metrics International Limited, he leads a multidisciplinary consulting firm delivering research, monitoring and evaluation, policy advisory and organisational development services to governments, development partners, academic institutions and NGOs across Africa and beyond. He holds a Master of Education (Special Needs Education) from Maseno University and a Bachelor of Education (Special Needs Education with IT), First Class Honours, alongside a Diploma in Monitoring and Evaluation (Distinction) from Kenyatta University.",
     achievements: [
-      "Led early childhood disability screening and assistive technology integration programs reaching hundreds of children",
-      "Coordinated inclusive remote learning programs through Student World in the United Kingdom",
-      "Lead Trainer for Core Life Skills under the We Can Work Program for youth with disabilities",
+      "Founded Verity Metrics International Limited to bridge the gap between research, policy and practice",
+      "Published researcher on disability inclusion, functional skills development and teacher preparedness",
+      "Prospective PhD candidate at Te Herenga Waka - Victoria University of Wellington, New Zealand",
+    ],
+  },
+  {
+    name: "Felix Okoth Otieno",
+    position: "Associate Consultant - Inclusive Education & Disability Inclusion",
+    image: IMAGES.felixOtieno,
+    expertise: [
+      "Inclusive Education",
+      "Disability Inclusion",
+      "Teacher Development",
+      "Assistive Technology",
+      "Research Translation",
+    ],
+    bio: "Felix Okoth Otieno is a Disability-Inclusive Education Specialist and learning systems practitioner supporting inclusive education initiatives across Kenya. His work spans teacher professional development, disability inclusive programming, research translation and the design of accessible learning environments. Currently supporting national disability inclusion efforts within Kenya's Ministry of Education, he brings together a background in Special Needs Education and Information Technology, with a particular interest in translating evidence into classroom practice.",
+    achievements: [
+      "Co-developed the Inclusive Education Toolkit for Early Childhood Education",
+      "Supported training of educators and education professionals across multiple counties",
+      "Contributed to research and inclusive pedagogy with The Action Foundation and the Clinton Health Access Initiative",
     ],
   },
   {
@@ -72,6 +91,58 @@ const teamMembers: TeamMember[] = [
       "Contributed to Kenya's Third Annual Progress Report of the Economic Recovery Strategy (ERS)",
       "Strengthened partnerships with government and civil society at DEEDS Kenya",
       "Provides legislative advisory services to influence health sector reforms",
+    ],
+  },
+  {
+    name: "Abraham Shivachi",
+    position: "Education Specialist & Leadership Coach",
+    expertise: [
+      "Education Quality",
+      "Leadership Coaching",
+      "Curriculum Development",
+      "Teacher Training",
+      "Educational Technology",
+    ],
+    bio: "Abraham is an accomplished Education Specialist with over 20 years of experience improving learner performance, teacher training and school leadership development. His expertise lies in school quality assessment, curriculum development and educational technology integration, particularly in underserved areas. As a Leadership Coach with the Transforming Schooling into Learning project, he has delivered professional development to school leaders and teacher mentors. Abraham holds a Bachelor's in Early Childhood Studies and Primary Education from Mount Kenya University.",
+    achievements: [
+      "Trained and mentored over 64 school leaders and 96 teachers, improving outcomes for 2,400+ learners",
+      "Represented World Vision Kenya at the 21st Conference of Commonwealth Education Ministers",
+      "Coordinated the KIX IDRC Global Partnership in Education and LEGO Foundation Learning through Play projects",
+    ],
+  },
+  {
+    name: "Daniel Kheri Kazungu",
+    position: "MEAL Specialist & Program Development Expert",
+    expertise: [
+      "Monitoring & Evaluation",
+      "Program Development",
+      "Accountability",
+      "Capacity Building",
+      "Humanitarian Response",
+    ],
+    bio: "Daniel is a Monitoring, Evaluation, Accountability and Learning specialist with over seven years of experience in the humanitarian and development sector, working across Kenya, Ethiopia and Sudan. He has designed and implemented MEAL frameworks for multi-million-dollar interventions in nutrition, WASH, livelihoods, cash assistance and child protection. Daniel holds a B.Sc. in Project Planning and Management and a Master's in Community Development, and is certified in disaster management and cash and voucher assistance programming.",
+    achievements: [
+      "Led MEAL processes for large-scale programs across Kenya, Ethiopia and Sudan",
+      "Contributed to the expansion of the USAID BHA portfolio in Kenya as MEAL Coordinator at World Vision Kenya",
+      "Certified in disaster management, humanitarian response and cash & voucher assistance programming",
+    ],
+  },
+  {
+    name: "Chungune June Chopetta",
+    position: "Operations & Logistics Associate",
+    image: IMAGES.juneChopetta,
+    expertise: [
+      "Procurement & Supply Chain",
+      "Logistics Coordination",
+      "Operations",
+      "Research Assistance",
+      "Field Engagement",
+    ],
+    bio: "June is a procurement and supply chain professional with a Bachelor's degree in Procurement and Logistics Management from Kabarak University. She brings experience in operations, logistics coordination, procurement support, research assistance and field engagement. At Verity Metrics International Limited she supports project administration, logistics coordination, procurement functions, field operations and stakeholder engagement, helping ensure the smooth delivery of consultancy, research and evaluation assignments.",
+    achievements: [
+      "Participated in research and data collection on learning environments and ICT readiness in schools with The Action Foundation",
+      "Experienced in tender documentation, market assessments, contract support and inventory management",
+      "Skilled in field coordination, stakeholder engagement, interviewing and reporting",
     ],
   },
 ];
@@ -111,11 +182,31 @@ export default function Team() {
                       className="relative"
                     >
                       <div className="absolute -inset-4 bg-gradient-to-br from-sky-200 to-sky-100 rounded-2xl blur-xl opacity-40" />
-                      <img loading="lazy" decoding="async"
-                        src={member.image}
-                        alt={member.name}
-                        className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[3/4]"
-                      />
+                      {member.image ? (
+                        <img
+                          loading="lazy"
+                          decoding="async"
+                          src={member.image}
+                          alt={member.name}
+                          className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[3/4]"
+                        />
+                      ) : (
+                        /* No portrait on file yet - show a monogram rather than a gap */
+                        <div
+                          role="img"
+                          aria-label={member.name}
+                          className="relative rounded-2xl shadow-2xl w-full aspect-[3/4] flex items-center justify-center bg-gradient-to-br from-sky-600 to-sky-800"
+                        >
+                          <span className="font-heading font-bold text-white/90 text-6xl md:text-7xl tracking-wide">
+                            {member.name
+                              .split(" ")
+                              .filter(Boolean)
+                              .slice(0, 2)
+                              .map((word) => word[0])
+                              .join("")}
+                          </span>
+                        </div>
+                      )}
                     </motion.div>
                   </div>
 
