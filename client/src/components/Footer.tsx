@@ -15,7 +15,7 @@ export default function Footer() {
                   decoding="async"
                   src={IMAGES.logo}
                   alt="Verity Metrics International"
-                  className="h-24 w-auto"
+                  className="h-16 w-auto md:h-20"
                 />
               </span>
               <div>

@@ -46,7 +46,7 @@ export default function Navbar() {
             decoding="async"
             src={IMAGES.logo}
             alt="Verity Metrics International"
-            className="h-20 w-auto"
+            className="h-14 w-auto md:h-16 lg:h-[68px]"
           />
         </Link>
 
