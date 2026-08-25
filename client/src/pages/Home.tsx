@@ -10,7 +10,6 @@ import { IMAGES } from "@/lib/images";
 import { HEADLINE_STATS } from "@/lib/stats";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import Typewriter from "@/components/Typewriter";
-import LogoMarquee from "@/components/LogoMarquee";
 import AnimatedHeading from "@/components/AnimatedHeading";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -23,6 +22,9 @@ import {
   HeartHandshake,
   ArrowRight,
   CheckCircle2,
+  Landmark,
+  Globe2,
+  Handshake,
 } from "lucide-react";
 
 const services = [
@@ -81,9 +83,17 @@ const heroSlides = [
 /* Cycled by the typewriter in the hero headline. */
 const heroWords = ["evidence", "research", "data", "insight"];
 
-const partners = [
-  "UNICEF", "World Bank", "USAID", "GIZ", "Save the Children",
-  "Plan International", "CBM", "Leonard Cheshire",
+/*
+ * The kinds of organisation we work with, rather than named institutions.
+ * Wording follows the "Partner With Us" section of the company profile.
+ */
+const partnerSectors = [
+  { icon: Landmark, label: "Governments" },
+  { icon: HeartHandshake, label: "NGOs & Civil Society" },
+  { icon: Globe2, label: "Development Agencies" },
+  { icon: Handshake, label: "Foundations" },
+  { icon: GraduationCap, label: "Learning Institutions" },
+  { icon: Building2, label: "Private Sector" },
 ];
 
 export default function Home() {
@@ -338,18 +348,35 @@ export default function Home() {
       <section className="py-16 bg-sky-50">
         <div className="container">
           <ScrollReveal>
-            <div className="text-center mb-10">
-              <span className="eyebrow">
-                Trusted By
-              </span>
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <span className="eyebrow justify-center">Who We Work With</span>
               <AnimatedHeading
-                text="Our Partners & Clients"
+                text="Partners Across Every Sector"
                 highlight={["Partners"]}
-                className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mt-2"
+                className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mt-2 mb-4"
               />
+              <p className="text-slate-600 leading-relaxed">
+                We work with governments, NGOs, development agencies, foundations, learning
+                institutions and private-sector organisations to deliver research-driven solutions
+                that inform policy, strengthen programmes and accelerate impact.
+              </p>
             </div>
           </ScrollReveal>
-          <LogoMarquee items={partners} />
+
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            {partnerSectors.map((sector, i) => (
+              <ScrollReveal key={sector.label} delay={i * 0.06}>
+                <div className="group flex h-full flex-col items-center gap-3 rounded-2xl border border-sky-100 bg-white px-4 py-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-periwinkle hover:shadow-lg">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-50 text-sky-600 transition-colors duration-300 group-hover:bg-brand-flow group-hover:text-white">
+                    <sector.icon size={20} />
+                  </span>
+                  <span className="font-heading text-sm font-semibold leading-snug text-slate-800">
+                    {sector.label}
+                  </span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
