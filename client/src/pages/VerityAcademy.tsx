@@ -132,14 +132,14 @@ export default function VerityAcademy() {
             <ScrollReveal direction="right">
               <div className="relative">
                 <img loading="lazy" decoding="async"
-                  src={IMAGES.academyClassroom}
+                  src={IMAGES.academySession2}
                   alt="Verity Academy virtual classroom"
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
                 />
                 <div className="absolute -bottom-4 -left-4 bg-sky-500 text-white rounded-xl p-4 shadow-lg hidden md:block">
                   <div className="flex items-center gap-2">
                     <Star size={20} className="text-yellow-300 fill-yellow-300" />
-                    <span className="font-heading font-bold text-lg">4.9/5</span>
+                    <span className="font-heading font-bold text-lg">3.8/5</span>
                   </div>
                   <div className="text-sky-100 text-sm">Student Rating</div>
                 </div>
@@ -187,7 +187,7 @@ export default function VerityAcademy() {
             <ScrollReveal direction="left">
               <div className="relative">
                 <img loading="lazy" decoding="async"
-                  src={IMAGES.academyStudent}
+                  src={IMAGES.academySession1}
                   alt="Student studying"
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
                 />

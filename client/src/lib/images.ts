@@ -26,6 +26,8 @@ export const IMAGES = {
   teamFieldwork1: "/images/team/team-fieldwork-1.jpg",
   teamFieldwork2: "/images/team/team-fieldwork-2.jpg",
   teamFieldwork3: "/images/team/team-fieldwork-3.jpg",
+  teamFieldwork4: "/images/team/team-fieldwork-4.jpg",
+  teamFieldwork5: "/images/team/team-fieldwork-5.jpg",
   teamInterview: "/images/team/team-interview.jpg",
   teamCommunity: "/images/team/team-community.jpg",
   teamWorkshop: "/images/team/team-workshop.jpg",
@@ -38,20 +40,16 @@ export const IMAGES = {
   contactHero: "/images/hero/contact.jpg",
   projectsField: "/images/hero/projects.jpg",
 
-  // Service illustrations
-  servicesResearch: "/images/services/research.jpg",
+  // Service illustrations. The remaining two are AI-generated stock inherited
+  // from the February rebuild and still need replacing with real photographs.
   servicesMeal: "/images/services/meal.jpg",
-  servicesInclusion: "/images/services/inclusion.jpg",
   servicesEducation: "/images/services/education.jpg",
-  servicesCapacity: "/images/services/capacity.jpg",
-  servicesOrgDev: "/images/services/organisational-development.jpg",
 
   // Academy
-  academyClassroom: "/images/academy/classroom.jpg",
-  academyStudent: "/images/academy/student.jpg",
+  academySession1: "/images/academy/session-1.jpg",
+  academySession2: "/images/academy/session-2.jpg",
 
   // Projects
-  disabilityForum: "/images/projects/disability-forum.jpg",
   i3fAward: "/images/projects/i3f-award.jpg",
   staraCbe1: "/images/projects/stara-cbe-1.jpg",
   staraCbe2: "/images/projects/stara-cbe-2.jpg",

@@ -9,7 +9,15 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex flex-col items-start gap-4 mb-6">
-              <img loading="lazy" decoding="async" src={IMAGES.logo} alt="Verity Metrics" className="h-24 w-auto" />
+              <span className="inline-flex rounded-2xl bg-white p-3 shadow-lg shadow-black/20">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={IMAGES.logo}
+                  alt="Verity Metrics International"
+                  className="h-24 w-auto"
+                />
+              </span>
               <div>
                 <div className="font-heading font-bold text-xl leading-tight">Verity Metrics</div>
                 <div className="text-sky-300 text-xs tracking-wider uppercase">International</div>

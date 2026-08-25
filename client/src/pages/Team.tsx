@@ -18,6 +18,8 @@ interface TeamMember {
   name: string;
   position: string;
   bio: string;
+  /** Full profile, rendered as separate paragraphs in place of `bio`. */
+  bioParagraphs?: string[];
   expertise: string[];
   achievements?: string[];
   image?: string;
@@ -31,18 +33,26 @@ const teamMembers: TeamMember[] = [
     position: "Founder & Executive Director",
     image: IMAGES.fondoHassan,
     expertise: [
-      "Research & MEAL",
-      "Inclusive Education",
-      "Disability Inclusion",
-      "Policy Analysis",
-      "Impact Evaluation",
-      "Strategic Planning",
+      "Research, Monitoring, Evaluation, Accountability and Learning (MEAL)",
+      "Inclusive Education and Disability Inclusion",
+      "Policy Analysis and Systems Strengthening",
+      "Program Design and Impact Evaluation",
+      "Organizational Learning and Knowledge Management",
+      "Education and Development Research",
+      "Capacity Building and Technical Assistance",
+      "Strategic Planning and Advisory Services",
+      "Disability Rights and Advocacy",
+      "Evidence-Based Decision Making",
     ],
-    bio: "Fondo Hassan Kalama is an Inclusive Education Specialist, Disability Inclusion Expert, Researcher and MEAL practitioner whose work sits at the intersection of evidence generation, policy influence and systems strengthening. As Founder and Executive Director of Verity Metrics International Limited, he leads a multidisciplinary consulting firm delivering research, monitoring and evaluation, policy advisory and organisational development services to governments, development partners, academic institutions and NGOs across Africa and beyond. He holds a Master of Education (Special Needs Education) from Maseno University and a Bachelor of Education (Special Needs Education with IT), First Class Honours, alongside a Diploma in Monitoring and Evaluation (Distinction) from Kenyatta University.",
-    achievements: [
-      "Founded Verity Metrics International Limited to bridge the gap between research, policy and practice",
-      "Published researcher on disability inclusion, functional skills development and teacher preparedness",
-      "Prospective PhD candidate at Te Herenga Waka - Victoria University of Wellington, New Zealand",
+    bio: "",
+    bioParagraphs: [
+      "Fondo Hassan Kalama is a distinguished Inclusive Education Specialist, Disability Inclusion Expert, Researcher and Monitoring, Evaluation, Accountability and Learning (MEAL) Practitioner whose work sits at the intersection of evidence generation, policy influence, systems strengthening and social impact. As the Founder and Executive Director of Verity Metrics International Limited, Fondo provides strategic leadership to a multidisciplinary consulting firm delivering high quality research, monitoring and evaluation, learning, policy advisory and organizational development services to governments, development partners, academic institutions, NGOs and private sector organizations across Africa and beyond.",
+      "Driven by a conviction that effective development must be informed by credible evidence, Fondo established Verity Metrics International Limited to bridge the gap between research, policy and practice. Under his leadership, the firm supports organizations to generate actionable insights, measure impact, strengthen programs and make data driven decisions that create sustainable change.",
+      "Fondo holds a Master of Education (Special Needs Education) from Maseno University and a Bachelor of Education (Special Needs Education with IT), First Class Honours. He also holds a Diploma in Monitoring and Evaluation (Distinction) from Kenyatta University, complemented by professional training in disability inclusion, Kenya Sign Language, research methodologies and program management.",
+      "Over the course of his career, Fondo has collaborated with government ministries, international development agencies, civil society organizations, research institutions and technical working groups to design, implement and evaluate initiatives focused on inclusive education, disability rights, teacher professional development, learning systems strengthening and equitable access to quality education. His expertise spans research design, impact evaluation, baseline and endline studies, organizational learning, policy analysis, strategic planning and disability inclusive programming.",
+      "A published researcher and emerging thought leader in the field of inclusive education, Fondo has contributed to scholarly work examining disability inclusion, functional skills development, teacher preparedness and educational access for learners with diverse needs. His research interests include inclusive education systems, neurodevelopmental disabilities, assistive technology, learning support systems and evidence informed policy development. Beyond consultancy and research, Fondo is passionate about strengthening local capacity and supporting organizations to transform data into knowledge, knowledge into strategy and strategy into measurable impact. His leadership philosophy is rooted in innovation, collaboration, integrity and a commitment to ensuring that no individual or community is left behind in development processes.",
+      "Fondo is also a prospective PhD candidate at Te Herenga Waka – Victoria University of Wellington, New Zealand, where he seeks to further advance research on inclusive education, disability inclusion and learning support systems within diverse educational contexts.",
+      "Through Verity Metrics International Limited, he continues to partner with organizations seeking rigorous research, robust monitoring and evaluation systems and innovative solutions that drive meaningful and lasting change.",
     ],
   },
   {
@@ -324,9 +334,17 @@ export default function Team() {
                     </div>
 
                     {/* Bio */}
-                    <p className="text-slate-600 leading-relaxed mb-6">
-                      {member.bio}
-                    </p>
+                    {member.bioParagraphs ? (
+                      <div className="mb-6 space-y-4">
+                        {member.bioParagraphs.map((paragraph, i) => (
+                          <p key={i} className="text-slate-600 leading-relaxed">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-slate-600 leading-relaxed mb-6">{member.bio}</p>
+                    )}
 
                     {/* Achievements */}
                     {member.achievements && (

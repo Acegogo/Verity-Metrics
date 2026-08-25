@@ -40,7 +40,7 @@ const services = [
     id: "research",
     icon: BarChart3,
     title: "Research & Analytics",
-    image: IMAGES.servicesResearch,
+    image: IMAGES.staraCbe2,
     desc: "We design and implement rigorous research studies that generate actionable insights for informed decision-making. Our team employs both quantitative and qualitative methodologies to deliver comprehensive findings.",
     features: [
       { icon: FileSearch, label: "Baseline & Endline Studies" },
@@ -80,7 +80,7 @@ const services = [
     id: "inclusion",
     icon: HeartHandshake,
     title: "Disability Inclusion & Gender",
-    image: IMAGES.servicesInclusion,
+    image: IMAGES.tassiaForum2,
     desc: "We champion inclusive development by integrating disability and gender perspectives across all programs. Our approach ensures equitable participation and outcomes for marginalized groups.",
     features: [
       { icon: Accessibility, label: "Disability Mainstreaming" },
@@ -120,7 +120,7 @@ const services = [
     id: "capacity",
     icon: Users,
     title: "Capacity Building",
-    image: IMAGES.servicesCapacity,
+    image: IMAGES.teamFieldwork4,
     desc: "We design and deliver tailored training programs that strengthen organizational and individual capabilities, ensuring sustainable impact beyond our engagement.",
     features: [
       { icon: Presentation, label: "Customized Training Programs" },
@@ -140,7 +140,7 @@ const services = [
     id: "orgdev",
     icon: Building2,
     title: "Organizational Development",
-    image: IMAGES.servicesOrgDev,
+    image: IMAGES.teamFieldwork3,
     desc: "We support organizations in strengthening their institutional capacity through strategic planning, governance improvement and systems development for sustainable growth.",
     features: [
       { icon: Target, label: "Strategic Planning" },
@@ -170,7 +170,7 @@ export default function Services() {
     const el = document.getElementById(id);
     if (!el) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const top = el.getBoundingClientRect().top + window.scrollY - 88; // clear the fixed navbar
+    const top = el.getBoundingClientRect().top + window.scrollY - 150; // clear navbar + sticky jump bar
     window.scrollTo({ top, behavior: reduced ? "auto" : "smooth" });
   };
 
@@ -179,7 +179,7 @@ export default function Services() {
       <PageHero
         title="Our Services"
         subtitle="Comprehensive development consulting services designed to create measurable, lasting impact."
-        image={IMAGES.servicesCapacity}
+        image={IMAGES.teamWorkshop}
         overlay="blue"
       />
 
@@ -205,7 +205,7 @@ export default function Services() {
       </section>
 
       {/* Quick jump - the sections already carry ids */}
-      <section className="sticky top-[72px] z-30 border-y border-sky-100 bg-white/85 backdrop-blur-md">
+      <section className="sticky top-[92px] z-30 border-y border-sky-100 bg-white/85 backdrop-blur-md">
         <div className="container">
           <div className="flex gap-2 overflow-x-auto py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {services.map((service, i) => (

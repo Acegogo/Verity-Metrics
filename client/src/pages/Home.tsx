@@ -30,7 +30,7 @@ const services = [
     icon: BarChart3,
     title: "Research & Analytics",
     desc: "Comprehensive research design, data collection, analysis and reporting to inform evidence-based decision making.",
-    image: IMAGES.servicesResearch,
+    image: IMAGES.staraCbe2,
   },
   {
     icon: Target,
@@ -42,7 +42,7 @@ const services = [
     icon: HeartHandshake,
     title: "Disability Inclusion & Gender",
     desc: "Promoting inclusive practices that ensure equitable participation for persons with disabilities and gender equity.",
-    image: IMAGES.servicesInclusion,
+    image: IMAGES.tassiaForum2,
   },
   {
     icon: GraduationCap,
@@ -54,13 +54,13 @@ const services = [
     icon: Users,
     title: "Capacity Building",
     desc: "Tailored training programs that strengthen organizational and individual capabilities for lasting impact.",
-    image: IMAGES.servicesCapacity,
+    image: IMAGES.teamFieldwork4,
   },
   {
     icon: Building2,
     title: "Organizational Development",
     desc: "Strategic planning, institutional strengthening and governance support for sustainable growth.",
-    image: IMAGES.servicesOrgDev,
+    image: IMAGES.teamFieldwork3,
   },
 ];
 

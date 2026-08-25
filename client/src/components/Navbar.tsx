@@ -38,7 +38,7 @@ export default function Navbar() {
           : "bg-white/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container flex items-center justify-between h-[72px]">
+      <div className="container flex items-center justify-between h-[92px]">
         <Link href="/" className="flex items-center no-underline">
           <img
             loading="eager"
@@ -46,7 +46,7 @@ export default function Navbar() {
             decoding="async"
             src={IMAGES.logo}
             alt="Verity Metrics International"
-            className="h-16 w-auto"
+            className="h-20 w-auto"
           />
         </Link>
 
