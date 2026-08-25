@@ -2,16 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <!-- maximum-scale removed: it blocked pinch-zoom, a WCAG 2.1 (1.4.4) failure -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Verity Metrics International</title>
-    <meta name="description" content="Innovating Solutions, Inspiring Global Change. Research, Monitoring, Evaluation & Learning solutions." />
+    <meta
+      name="description"
+      content="Verity Metrics International Limited delivers research, monitoring and evaluation, inclusive education and organisational development services across Africa and beyond."
+    />
+    <link rel="canonical" href="https://www.veritymetric.com/" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="theme-color" content="#0369a1" />
+
+    <!-- Link previews for LinkedIn, Facebook, X and WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Verity Metrics International" />
+    <meta property="og:url" content="https://www.veritymetric.com/" />
+    <meta property="og:title" content="Verity Metrics International" />
+    <meta
+      property="og:description"
+      content="Innovating Solutions, Inspiring Global Change. Research, monitoring and evaluation, inclusive education and organisational development."
+    />
+    <meta property="og:image" content="https://www.veritymetric.com/social-card.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_GB" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@VerityMetrics" />
+    <meta name="twitter:title" content="Verity Metrics International" />
+    <meta
+      name="twitter:description"
+      content="Innovating Solutions, Inspiring Global Change. Research, monitoring and evaluation, inclusive education and organisational development."
+    />
+    <meta name="twitter:image" content="https://www.veritymetric.com/social-card.jpg" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
+
+    <!--
+      Netlify detects this static form at build time and creates the "contact"
+      form. The React form on /contact posts submissions into it.
+      Field names must stay in step with client/src/pages/Contact.tsx.
+    -->
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
     <script type="module" src="/src/main.tsx"></script>
-    <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
 </html>

@@ -54,10 +54,44 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Honeypot: real people never see this field, bots fill it in.
+  const [botField, setBotField] = useState("");
+  const [sending, setSending] = useState(false);
+
+  // Posts to Netlify Forms. The matching static form in client/index.html is
+  // what Netlify detects at build time; this sends the encoded submission.
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you for your message! We will get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    if (sending) return;
+    setSending(true);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          "form-name": "contact",
+          "bot-field": botField,
+          ...formData,
+        }).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Submission failed with status ${response.status}`);
+      }
+
+      toast.success("Message sent. We will get back to you within two working days.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setBotField("");
+    } catch (error) {
+      // Never tell someone their message was received when it was not.
+      toast.error(
+        "Your message could not be sent. Please email info@veritymetric.com or call +254 117 330 809.",
+        { duration: 10000 },
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -107,13 +141,34 @@ export default function Contact() {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
                   We'd Love to Hear From You
                 </h2>
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
+                  className="space-y-5"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p className="hidden">
+                    <label>
+                      Do not fill this in
+                      <input
+                        name="bot-field"
+                        value={botField}
+                        onChange={(e) => setBotField(e.target.value)}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </label>
+                  </p>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1.5">Full Name</label>
                       <input
                         type="text"
                         required
+                        name="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg border border-sky-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 outline-none transition-all text-sm bg-white"
@@ -125,6 +180,7 @@ export default function Contact() {
                       <input
                         type="email"
                         required
+                        name="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg border border-sky-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 outline-none transition-all text-sm bg-white"
@@ -137,6 +193,7 @@ export default function Contact() {
                     <input
                       type="text"
                       required
+                      name="subject"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg border border-sky-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 outline-none transition-all text-sm bg-white"
@@ -148,6 +205,7 @@ export default function Contact() {
                     <textarea
                       required
                       rows={6}
+                      name="message"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg border border-sky-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 outline-none transition-all text-sm bg-white resize-none"
@@ -156,9 +214,10 @@ export default function Contact() {
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-8 py-3.5 rounded-lg font-semibold transition-all shadow-lg shadow-sky-600/20"
+                    disabled={sending}
+                    className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 disabled:opacity-60 disabled:cursor-not-allowed text-white px-8 py-3.5 rounded-lg font-semibold transition-all shadow-lg shadow-sky-600/20"
                   >
-                    Send Message <Send size={16} />
+                    {sending ? "Sending…" : "Send Message"} <Send size={16} />
                   </button>
                 </form>
               </ScrollReveal>
@@ -193,7 +252,7 @@ export default function Contact() {
                   <h4 className="font-heading font-semibold text-slate-900 mb-4">Follow Us</h4>
                   <div className="flex gap-3">
                     <a
-                      href="https://www.facebook.com/profile.php?id=61572181777876"
+                      href="https://web.facebook.com/profile.php?id=61573955033398&locale=en_GB"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-11 h-11 rounded-xl bg-white border border-sky-200 hover:bg-sky-100 flex items-center justify-center transition-colors"
@@ -202,7 +261,7 @@ export default function Contact() {
                       <Facebook size={18} className="text-sky-600" />
                     </a>
                     <a
-                      href="https://x.com/MetricsVerity"
+                      href="https://x.com/VerityMetrics"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-11 h-11 rounded-xl bg-white border border-sky-200 hover:bg-sky-100 flex items-center justify-center transition-colors"
@@ -211,7 +270,7 @@ export default function Contact() {
                       <Twitter size={18} className="text-sky-600" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/company/106668154"
+                      href="https://www.linkedin.com/company/verity-metrics-international/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-11 h-11 rounded-xl bg-white border border-sky-200 hover:bg-sky-100 flex items-center justify-center transition-colors"

@@ -60,10 +60,10 @@ const services = [
 ];
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects Completed" },
-  { value: 5, suffix: "+", label: "Countries Served" },
-  { value: 100, suffix: "+", label: "Partners & Clients" },
-  { value: 10, suffix: "+", label: "Years Experience" },
+  { value: 26, suffix: "", label: "Projects Completed" },
+  { value: 2, suffix: "", label: "Countries Served" },
+  { value: 43, suffix: "", label: "Partners & Clients" },
+  { value: 3, suffix: "+", label: "Years Experience" },
 ];
 
 const partners = [

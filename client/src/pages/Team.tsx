@@ -59,7 +59,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Evans Ochieng Nudih",
     position: "Senior Research & Policy Specialist",
-    image: IMAGES.evansPlaceholder,
+    image: IMAGES.evansNudih,
     expertise: [
       "Research Design",
       "Monitoring & Evaluation",

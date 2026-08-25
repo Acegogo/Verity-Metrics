@@ -6,7 +6,7 @@ export const IMAGES = {
   // Team member professional photos
   fondoHassan: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/wOtrVIqvNNandeRm.jpeg",
   gabrielMureithi: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/pmVcTfmMjKtvqACL.jpeg",
-  evansPlaceholder: "https://via.placeholder.com/400x500/4DBBEB/ffffff?text=Evans+Ochieng",
+  evansNudih: "/images/team/evans-nudih.jpg",
   
   // Real team photos from field visits
   teamTraining: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341676517/xsYesdshySeblJap.jpeg",
