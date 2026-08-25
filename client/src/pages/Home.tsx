@@ -7,6 +7,9 @@ import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import CountUp from "@/components/CountUp";
 import { IMAGES } from "@/lib/images";
+import { HEADLINE_STATS } from "@/lib/stats";
+import HeroSlideshow from "@/components/HeroSlideshow";
+import Typewriter from "@/components/Typewriter";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import {
@@ -59,12 +62,22 @@ const services = [
   },
 ];
 
-const stats = [
-  { value: 26, suffix: "", label: "Projects Completed" },
-  { value: 2, suffix: "", label: "Countries Served" },
-  { value: 43, suffix: "", label: "Partners & Clients" },
-  { value: 3, suffix: "+", label: "Years Experience" },
+const stats = HEADLINE_STATS;
+
+/* Real photographs of the team at work, rotating behind the hero. */
+const heroSlides = [
+  IMAGES.heroHome,
+  IMAGES.teamFieldwork1,
+  IMAGES.teamCommunity,
+  IMAGES.teamWorkshop,
+  IMAGES.teamEngagement,
+  IMAGES.teamInterview,
+  IMAGES.teamFieldwork2,
+  IMAGES.teamTraining,
 ];
+
+/* Cycled by the typewriter in the hero headline. */
+const heroWords = ["evidence", "research", "data", "insight"];
 
 const partners = [
   "UNICEF", "World Bank", "USAID", "GIZ", "Save the Children",
@@ -76,15 +89,7 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <img
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          src={IMAGES.heroHome}
-          alt="Verity Metrics team in the field"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-950/85 via-sky-900/70 to-sky-800/50" />
+        <HeroSlideshow images={heroSlides} />
         <div className="container relative z-10 py-20">
           <div className="max-w-3xl">
             <motion.div
@@ -104,8 +109,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-[1.08] mb-6"
             >
-              Innovating Solutions,{" "}
-              <span className="text-sky-300">Inspiring</span> Global Change
+              Transforming <Typewriter words={heroWords} /> into impact
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -113,8 +117,11 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.25 }}
               className="text-lg md:text-xl text-sky-100/90 max-w-2xl mb-8 leading-relaxed"
             >
+              <span className="block text-sky-200 font-semibold mb-2">
+                Innovating Solutions, Inspiring Global Change
+              </span>
               We empower organizations with data-driven solutions in Research,
-              Monitoring, Evaluation & Learning, Disability Inclusion and
+              Monitoring, Evaluation &amp; Learning, Disability Inclusion and
               Capacity Building for sustainable development impact.
             </motion.p>
             <motion.div
@@ -125,7 +132,7 @@ export default function Home() {
             >
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white px-7 py-3.5 rounded-lg font-semibold text-base transition-all shadow-lg shadow-sky-500/30 hover:shadow-sky-400/40 no-underline"
+                className="group inline-flex items-center gap-2 bg-brand-flow animate-sheen text-white px-7 py-3.5 rounded-lg font-semibold text-base transition-all shadow-lg shadow-sky-500/30 hover:shadow-brand-indigo/50 hover:-translate-y-0.5 no-underline"
               >
                 Our Services <ArrowRight size={18} />
               </Link>
@@ -139,7 +146,7 @@ export default function Home() {
           </div>
         </div>
         {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f0f9ff] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sky-50 to-transparent z-10 pointer-events-none" />
       </section>
 
       {/* Stats Bar */}
@@ -149,7 +156,7 @@ export default function Home() {
             {stats.map((stat, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-sky-700 mb-1">
+                  <div className="text-4xl md:text-5xl font-heading font-bold text-brand-flow mb-1 tabular-nums">
                     <CountUp end={stat.value} suffix={stat.suffix} />
                   </div>
                   <div className="text-sm text-slate-600 font-medium">
@@ -181,7 +188,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div>
-                <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+                <span className="eyebrow">
                   Who We Are
                 </span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
@@ -227,7 +234,7 @@ export default function Home() {
         <div className="container">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+              <span className="eyebrow">
                 What We Do
               </span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
@@ -327,7 +334,7 @@ export default function Home() {
         <div className="container">
           <ScrollReveal>
             <div className="text-center mb-10">
-              <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+              <span className="eyebrow">
                 Trusted By
               </span>
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mt-2">

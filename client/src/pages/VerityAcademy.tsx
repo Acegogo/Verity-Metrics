@@ -98,7 +98,7 @@ export default function VerityAcademy() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <ScrollReveal direction="left">
               <div>
-                <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+                <span className="eyebrow">
                   Academic Excellence
                 </span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
@@ -151,7 +151,7 @@ export default function VerityAcademy() {
         <div className="container">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+              <span className="eyebrow">Why Choose Us</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
                 The Verity Academy Advantage
               </h2>
@@ -191,7 +191,7 @@ export default function VerityAcademy() {
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div>
-                <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">Subjects Offered</span>
+                <span className="eyebrow">Subjects Offered</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
                   Comprehensive Subject Coverage
                 </h2>
@@ -220,7 +220,7 @@ export default function VerityAcademy() {
         <div className="container">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+              <span className="eyebrow">Testimonials</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
                 What Our Students Say
               </h2>

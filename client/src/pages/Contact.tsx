@@ -137,7 +137,7 @@ export default function Contact() {
             {/* Form */}
             <div className="lg:col-span-3">
               <ScrollReveal direction="left">
-                <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">Send Us a Message</span>
+                <span className="eyebrow">Send Us a Message</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
                   We'd Love to Hear From You
                 </h2>
@@ -215,7 +215,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={sending}
-                    className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 disabled:opacity-60 disabled:cursor-not-allowed text-white px-8 py-3.5 rounded-lg font-semibold transition-all shadow-lg shadow-sky-600/20"
+                    className="inline-flex items-center gap-2 bg-brand-flow disabled:opacity-60 disabled:cursor-not-allowed text-white px-8 py-3.5 rounded-lg font-semibold transition-all shadow-lg shadow-brand-indigo/25 hover:shadow-xl hover:shadow-brand-indigo/40 hover:-translate-y-0.5 disabled:translate-y-0"
                   >
                     {sending ? "Sending…" : "Send Message"} <Send size={16} />
                   </button>

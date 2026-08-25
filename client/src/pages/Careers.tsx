@@ -114,7 +114,7 @@ export default function Careers() {
         <div className="container max-w-4xl">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+              <span className="eyebrow">
                 Join Us
               </span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
@@ -252,7 +252,7 @@ export default function Careers() {
 
                             <a
                               href={`mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent(pathway.subject)}`}
-                              className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg shadow-sky-600/20 no-underline text-sm"
+                              className="inline-flex items-center gap-2 bg-brand-flow text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg shadow-brand-indigo/25 hover:shadow-xl hover:shadow-brand-indigo/40 hover:-translate-y-0.5 no-underline text-sm"
                             >
                               {pathway.cta} <ArrowRight size={16} />
                             </a>

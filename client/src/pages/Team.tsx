@@ -213,7 +213,7 @@ export default function Team() {
                   {/* Content */}
                   <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                     <div className="mb-6">
-                      <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+                      <span className="eyebrow">
                         Team Member
                       </span>
                       <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-2">
@@ -285,7 +285,7 @@ export default function Team() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
-              <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+              <span className="eyebrow">
                 Our Culture
               </span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">

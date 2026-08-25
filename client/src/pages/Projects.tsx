@@ -7,6 +7,7 @@ import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import CountUp from "@/components/CountUp";
 import { IMAGES } from "@/lib/images";
+import { HEADLINE_STATS } from "@/lib/stats";
 import { MapPin, Calendar, Users, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
@@ -76,12 +77,7 @@ const projects = [
   },
 ];
 
-const impactStats = [
-  { value: 50, suffix: "+", label: "Projects Delivered" },
-  { value: 5, suffix: "+", label: "Countries Reached" },
-  { value: 10000, suffix: "+", label: "Beneficiaries Impacted" },
-  { value: 100, suffix: "%", label: "Client Satisfaction" },
-];
+const impactStats = HEADLINE_STATS;
 
 export default function Projects() {
   return (
@@ -100,7 +96,7 @@ export default function Projects() {
             {impactStats.map((stat, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-sky-700 mb-1">
+                  <div className="text-4xl md:text-5xl font-heading font-bold text-brand-flow mb-1 tabular-nums">
                     <CountUp end={stat.value} suffix={stat.suffix} />
                   </div>
                   <div className="text-sm text-slate-600 font-medium">{stat.label}</div>
@@ -116,7 +112,7 @@ export default function Projects() {
         <div className="container">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">Our Portfolio</span>
+              <span className="eyebrow">Our Portfolio</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-4">
                 Featured Projects
               </h2>
@@ -129,7 +125,7 @@ export default function Projects() {
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
               <ScrollReveal key={i} delay={i * 0.08}>
-                <div className="group bg-white border border-sky-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                <div className="group card-lift bg-white border border-sky-100 rounded-2xl overflow-hidden shadow-sm h-full flex flex-col">
                   <div className="relative h-56 overflow-hidden">
                     <img loading="lazy" decoding="async"
                       src={project.image}
@@ -193,7 +189,7 @@ export default function Projects() {
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div>
-                <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+                <span className="eyebrow">
                   Recognition
                 </span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2 mb-6">
@@ -220,7 +216,7 @@ export default function Projects() {
                 </ul>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg no-underline"
+                  className="inline-flex items-center gap-2 bg-brand-flow text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg shadow-brand-indigo/25 hover:shadow-xl hover:shadow-brand-indigo/40 hover:-translate-y-0.5 no-underline"
                 >
                   Partner With Us <ArrowRight size={18} />
                 </Link>

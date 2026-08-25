@@ -189,7 +189,7 @@ export default function Services() {
               {/* Content side */}
               <ScrollReveal direction={i % 2 === 0 ? "right" : "left"} className={i % 2 !== 0 ? "lg:order-1" : ""}>
                 <div>
-                  <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">
+                  <span className="eyebrow">
                     Service {String(i + 1).padStart(2, "0")}
                   </span>
                   <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mt-2 mb-4">

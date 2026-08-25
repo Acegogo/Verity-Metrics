@@ -42,17 +42,36 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-sans: 'Source Sans 3', system-ui, sans-serif;
   --font-heading: 'DM Sans', system-ui, sans-serif;
-  --color-sky-50: oklch(0.977 0.013 236.62);
-  --color-sky-100: oklch(0.951 0.026 236.82);
-  --color-sky-200: oklch(0.901 0.058 230.9);
-  --color-sky-300: oklch(0.828 0.111 230.3);
-  --color-sky-400: oklch(0.746 0.16 232.66);
-  --color-sky-500: oklch(0.685 0.169 237.32);
-  --color-sky-600: oklch(0.588 0.158 241.97);
-  --color-sky-700: oklch(0.5 0.134 242.75);
-  --color-sky-800: oklch(0.443 0.11 240.79);
-  --color-sky-900: oklch(0.391 0.09 240.88);
-  --color-navy: oklch(0.2 0.04 255);
+  /* -------------------------------------------------------------------
+     Brand palette, sampled from the Verity Metrics company profile.
+     Source colours:  #38B6FF azure   #00B0F0 sky     #1800AD indigo
+                      #2A2270 navy    #5E17EB violet  #6B0D53 plum
+                      #809EFF periwinkle
+     Blue remains the base; the profile's violets are used as accents.
+     ------------------------------------------------------------------- */
+  --color-sky-50:  #EFF8FF;
+  --color-sky-100: #DAF0FF;
+  --color-sky-200: #BCE5FF;
+  --color-sky-300: #8AD4FF;
+  --color-sky-400: #38B6FF;   /* profile azure - the signature blue */
+  --color-sky-500: #12A0EE;
+  --color-sky-600: #0B7FC7;   /* darkened for text contrast on white */
+  --color-sky-700: #0C6399;
+  --color-sky-800: #104E78;
+  --color-sky-900: #123F60;
+  --color-sky-950: #0A2740;
+
+  /* Violet accents, straight from the profile artwork */
+  --color-brand-periwinkle: #809EFF;
+  --color-brand-violet: #5E17EB;
+  --color-brand-indigo: #1800AD;
+  --color-brand-navy: #2A2270;
+  --color-brand-plum: #6B0D53;
+  --color-brand-azure: #38B6FF;
+  --color-brand-mist: #E5E9F7;
+  --color-brand-haze: #C5CFF2;
+
+  --color-navy: #2A2270;
   --color-sand: oklch(0.95 0.02 80);
   --color-warm: oklch(0.85 0.06 60);
   --color-teal: oklch(0.65 0.15 175);
@@ -66,7 +85,7 @@
   --card-foreground: oklch(0.2 0.04 255);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.04 255);
-  --primary: oklch(0.65 0.15 230);
+  --primary: #0B7FC7;
   --primary-foreground: oklch(0.99 0.002 240);
   --secondary: oklch(0.95 0.02 230);
   --secondary-foreground: oklch(0.3 0.06 240);
@@ -78,7 +97,7 @@
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.92 0.01 230);
   --input: oklch(0.92 0.01 230);
-  --ring: oklch(0.65 0.15 230);
+  --ring: #38B6FF;
   --chart-1: oklch(0.65 0.15 230);
   --chart-2: oklch(0.55 0.12 230);
   --chart-3: oklch(0.75 0.12 230);
@@ -160,9 +179,146 @@ html {
   background: oklch(0.96 0.008 240);
 }
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.75 0.1 230);
+  background: linear-gradient(180deg, #38B6FF, #1800AD);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.65 0.15 230);
+  background: linear-gradient(180deg, #12A0EE, #1800AD);
+}
+
+
+/* =========================================================================
+   Brand utilities
+   Derived from the company profile: azure blue running into deep indigo,
+   with the profile's flowing-wave motif reused as section dividers.
+   ========================================================================= */
+
+@layer components {
+  /* The signature blue-to-indigo run, used on bands, buttons and rules */
+  .bg-brand-flow {
+    background-image: linear-gradient(135deg, #38B6FF 0%, #12A0EE 38%, #1800AD 100%);
+  }
+  .bg-brand-deep {
+    background-image: linear-gradient(160deg, #2A2270 0%, #1800AD 55%, #0C6399 100%);
+  }
+  .bg-brand-dawn {
+    background-image: linear-gradient(135deg, #EFF8FF 0%, #E5E9F7 50%, #DAF0FF 100%);
+  }
+
+  /* Gradient text, clipped */
+  .text-brand-flow {
+    background-image: linear-gradient(120deg, #0B7FC7 0%, #5E17EB 60%, #1800AD 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Frosted card, for panels sitting over imagery or gradient */
+  .glass {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .glass-dark {
+    background: rgba(42, 34, 112, 0.42);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  /* Small uppercase kicker with a gradient rule, as used above section titles */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #0B7FC7;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    border-radius: 2px;
+    background-image: linear-gradient(90deg, #38B6FF, #1800AD);
+  }
+
+  /* Animated underline that draws in on hover */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    width: 0;
+    border-radius: 2px;
+    background-image: linear-gradient(90deg, #38B6FF, #5E17EB);
+    transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover::after,
+  .link-underline[data-active="true"]::after {
+    width: 100%;
+  }
+
+  /* Card that lifts and reveals an indigo top rule */
+  .card-lift {
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+  }
+  .card-lift::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background-image: linear-gradient(90deg, #38B6FF, #5E17EB, #1800AD);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 50px -24px rgba(24, 0, 173, 0.42);
+  }
+  .card-lift:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+/* Slow drift for ambient background orbs */
+@keyframes brand-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(0, -22px, 0) scale(1.06); }
+}
+.animate-drift { animation: brand-drift 14s ease-in-out infinite; }
+
+/* Sheen that sweeps across a gradient band */
+@keyframes brand-sheen {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+.animate-sheen {
+  background-size: 200% auto;
+  animation: brand-sheen 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-drift,
+  .animate-sheen { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
