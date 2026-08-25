@@ -65,6 +65,25 @@ const teamMembers: TeamMember[] = [
     ],
   },
   {
+    name: "Chungune June Chopetta",
+    group: "Operations",
+    position: "Operations & Logistics Associate",
+    image: IMAGES.juneChopetta,
+    expertise: [
+      "Procurement & Supply Chain",
+      "Logistics Coordination",
+      "Operations",
+      "Research Assistance",
+      "Field Engagement",
+    ],
+    bio: "June is a procurement and supply chain professional with a Bachelor's degree in Procurement and Logistics Management from Kabarak University. She brings experience in operations, logistics coordination, procurement support, research assistance and field engagement. At Verity Metrics International Limited she supports project administration, logistics coordination, procurement functions, field operations and stakeholder engagement, helping ensure the smooth delivery of consultancy, research and evaluation assignments.",
+    achievements: [
+      "Participated in research and data collection on learning environments and ICT readiness in schools with The Action Foundation",
+      "Experienced in tender documentation, market assessments, contract support and inventory management",
+      "Skilled in field coordination, stakeholder engagement, interviewing and reporting",
+    ],
+  },
+  {
     name: "Gabriel Mureithi",
     group: "Consulting",
     position: "Project Management & Child Protection Expert",
@@ -136,25 +155,6 @@ const teamMembers: TeamMember[] = [
       "Led MEAL processes for large-scale programs across Kenya, Ethiopia and Sudan",
       "Contributed to the expansion of the USAID BHA portfolio in Kenya as MEAL Coordinator at World Vision Kenya",
       "Certified in disaster management, humanitarian response and cash & voucher assistance programming",
-    ],
-  },
-  {
-    name: "Chungune June Chopetta",
-    group: "Operations",
-    position: "Operations & Logistics Associate",
-    image: IMAGES.juneChopetta,
-    expertise: [
-      "Procurement & Supply Chain",
-      "Logistics Coordination",
-      "Operations",
-      "Research Assistance",
-      "Field Engagement",
-    ],
-    bio: "June is a procurement and supply chain professional with a Bachelor's degree in Procurement and Logistics Management from Kabarak University. She brings experience in operations, logistics coordination, procurement support, research assistance and field engagement. At Verity Metrics International Limited she supports project administration, logistics coordination, procurement functions, field operations and stakeholder engagement, helping ensure the smooth delivery of consultancy, research and evaluation assignments.",
-    achievements: [
-      "Participated in research and data collection on learning environments and ICT readiness in schools with The Action Foundation",
-      "Experienced in tender documentation, market assessments, contract support and inventory management",
-      "Skilled in field coordination, stakeholder engagement, interviewing and reporting",
     ],
   },
 ];
