@@ -10,6 +10,8 @@ import { IMAGES } from "@/lib/images";
 import { HEADLINE_STATS } from "@/lib/stats";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import Typewriter from "@/components/Typewriter";
+import LogoMarquee from "@/components/LogoMarquee";
+import AnimatedHeading from "@/components/AnimatedHeading";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import {
@@ -337,20 +339,14 @@ export default function Home() {
               <span className="eyebrow">
                 Trusted By
               </span>
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mt-2">
-                Our Partners & Clients
-              </h2>
+              <AnimatedHeading
+                text="Our Partners & Clients"
+                highlight={["Partners"]}
+                className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mt-2"
+              />
             </div>
           </ScrollReveal>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-            {partners.map((partner, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="bg-white rounded-xl px-6 py-4 shadow-sm border border-sky-100 text-slate-700 font-medium text-sm hover:shadow-md hover:border-sky-200 transition-all">
-                  {partner}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <LogoMarquee items={partners} />
         </div>
       </section>
 
@@ -361,12 +357,14 @@ export default function Home() {
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-sky-900/85" />
+        <div className="absolute inset-0 bg-brand-deep opacity-90" />
         <div className="container relative z-10 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Ready to Make an Impact?
-            </h2>
+            <AnimatedHeading
+              text="Ready to Make an Impact?"
+              as="h2"
+              className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"
+            />
             <p className="text-sky-200 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
               Partner with us to drive evidence-based solutions and create
               lasting change in communities across the globe.

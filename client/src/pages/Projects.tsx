@@ -8,6 +8,9 @@ import ScrollReveal from "@/components/ScrollReveal";
 import CountUp from "@/components/CountUp";
 import { IMAGES } from "@/lib/images";
 import { HEADLINE_STATS } from "@/lib/stats";
+import AnimatedHeading from "@/components/AnimatedHeading";
+import { AnimatePresence, motion } from "framer-motion";
+import { useMemo, useState } from "react";
 import { MapPin, Calendar, Users, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
@@ -79,7 +82,44 @@ const projects = [
 
 const impactStats = HEADLINE_STATS;
 
+/* Grouping used by the filter. A project can sit in more than one theme. */
+const THEMES: Record<string, string[]> = {
+  "Inclusion": ["Disability Inclusion", "Inclusive Education", "Gender", "Mainstreaming"],
+  "Research & MEAL": ["MEAL", "Research", "Baseline Study", "Analysis", "Framework Design"],
+  "Education": ["Competency Based Education", "Education", "Teacher Training", "Classroom Observation"],
+  "Capacity & Strategy": [
+    "Capacity Building",
+    "Training",
+    "Organizational Development",
+    "Strategic Planning",
+    "Consulting",
+    "Stakeholder Engagement",
+  ],
+};
+
+function themesFor(tags: string[]): string[] {
+  return Object.entries(THEMES)
+    .filter(([, keys]) => keys.some((k) => tags.includes(k)))
+    .map(([theme]) => theme);
+}
+
 export default function Projects() {
+  const [active, setActive] = useState<string>("All");
+
+  const filters = useMemo(() => {
+    const present = new Set<string>();
+    projects.forEach((p) => themesFor(p.tags).forEach((t) => present.add(t)));
+    return ["All", ...Object.keys(THEMES).filter((t) => present.has(t))];
+  }, []);
+
+  const visible = useMemo(
+    () =>
+      active === "All"
+        ? projects
+        : projects.filter((p) => themesFor(p.tags).includes(active)),
+    [active],
+  );
+
   return (
     <Layout>
       <PageHero
@@ -122,9 +162,59 @@ export default function Projects() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, i) => (
-              <ScrollReveal key={i} delay={i * 0.08}>
+          {/* Filter by theme */}
+          <ScrollReveal>
+            <div className="mb-10 flex flex-wrap justify-center gap-2.5">
+              {filters.map((theme) => {
+                const isActive = theme === active;
+                return (
+                  <button
+                    key={theme}
+                    type="button"
+                    onClick={() => setActive(theme)}
+                    aria-pressed={isActive}
+                    className={`relative rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
+                      isActive
+                        ? "text-white"
+                        : "border border-sky-200 bg-white text-sky-700 hover:border-brand-periwinkle hover:text-brand-indigo"
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="project-filter-pill"
+                        className="absolute inset-0 rounded-full bg-brand-flow"
+                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      />
+                    )}
+                    <span className="relative z-10">{theme}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </ScrollReveal>
+
+          <p className="mb-8 text-center text-sm text-slate-500" aria-live="polite">
+            Showing <span className="font-semibold text-sky-700">{visible.length}</span> of{" "}
+            {projects.length} projects
+            {active !== "All" && (
+              <>
+                {" in "}
+                <span className="font-semibold text-sky-700">{active}</span>
+              </>
+            )}
+          </p>
+
+          <motion.div layout className="grid md:grid-cols-2 gap-8">
+            <AnimatePresence mode="popLayout">
+            {visible.map((project, i) => (
+              <motion.div
+                key={project.title}
+                layout
+                initial={{ opacity: 0, y: 24, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.4, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <div className="group card-lift bg-white border border-sky-100 rounded-2xl overflow-hidden shadow-sm h-full flex flex-col">
                   <div className="relative h-56 overflow-hidden">
                     <img loading="lazy" decoding="async"
@@ -166,9 +256,10 @@ export default function Projects() {
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
+              </motion.div>
             ))}
-          </div>
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 

@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import { IMAGES } from "@/lib/images";
+import RotatingWords from "@/components/RotatingWords";
 import { Link } from "wouter";
 import {
   BarChart3,
@@ -162,6 +163,27 @@ export default function Services() {
         image={IMAGES.servicesCapacity}
         overlay="blue"
       />
+
+      {/* Rotating capability line - sibling treatment to the hero typewriter */}
+      <section className="bg-brand-dawn py-14 md:py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="eyebrow justify-center">What We Deliver</span>
+            <p className="mt-3 font-heading text-2xl font-bold leading-tight text-slate-900 md:text-4xl">
+              We help organisations get better at{" "}
+              <RotatingWords
+                words={[
+                  "measuring impact",
+                  "including everyone",
+                  "using evidence",
+                  "building capacity",
+                ]}
+                className="text-brand-flow"
+              />
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Services List */}
       {services.map((service, i) => (

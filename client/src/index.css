@@ -312,6 +312,25 @@ html {
   animation: brand-sheen 6s linear infinite;
 }
 
+/* Seamless marquee: the track holds two copies of the list, so shifting by
+   exactly half its width returns to an identical frame. */
+@keyframes marquee-slide {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+.marquee-track {
+  animation-name: marquee-slide;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.group:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .animate-drift,

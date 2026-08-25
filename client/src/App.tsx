@@ -11,6 +11,8 @@ import Team from "./pages/Team";
 import Projects from "./pages/Projects";
 import VerityAcademy from "./pages/VerityAcademy";
 import Careers from "./pages/Careers";
+import ScrollToTop from "./components/ScrollToTop";
+import PageTransition from "./components/PageTransition";
 import Contact from "./pages/Contact";
 
 function Router() {
@@ -36,7 +38,10 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <ScrollToTop />
+          <PageTransition>
+            <Router />
+          </PageTransition>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
