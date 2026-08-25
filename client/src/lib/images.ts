@@ -42,8 +42,10 @@ export const IMAGES = {
 
   // Service illustrations. The remaining two are AI-generated stock inherited
   // from the February rebuild and still need replacing with real photographs.
+  servicesResearch: "/images/services/research.jpg",
   servicesMeal: "/images/services/meal.jpg",
   servicesEducation: "/images/services/education.jpg",
+  servicesOrgDev: "/images/services/organisational-development.jpg",
 
   // Academy
   academySession1: "/images/academy/session-1.jpg",

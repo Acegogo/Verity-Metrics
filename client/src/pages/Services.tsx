@@ -40,7 +40,7 @@ const services = [
     id: "research",
     icon: BarChart3,
     title: "Research & Analytics",
-    image: IMAGES.staraCbe2,
+    image: IMAGES.servicesResearch,
     desc: "We design and implement rigorous research studies that generate actionable insights for informed decision-making. Our team employs both quantitative and qualitative methodologies to deliver comprehensive findings.",
     features: [
       { icon: FileSearch, label: "Baseline & Endline Studies" },
@@ -140,7 +140,7 @@ const services = [
     id: "orgdev",
     icon: Building2,
     title: "Organizational Development",
-    image: IMAGES.teamFieldwork3,
+    image: IMAGES.servicesOrgDev,
     desc: "We support organizations in strengthening their institutional capacity through strategic planning, governance improvement and systems development for sustainable growth.",
     features: [
       { icon: Target, label: "Strategic Planning" },

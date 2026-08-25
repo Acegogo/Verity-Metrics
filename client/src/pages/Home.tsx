@@ -30,7 +30,7 @@ const services = [
     icon: BarChart3,
     title: "Research & Analytics",
     desc: "Comprehensive research design, data collection, analysis and reporting to inform evidence-based decision making.",
-    image: IMAGES.staraCbe2,
+    image: IMAGES.servicesResearch,
   },
   {
     icon: Target,
@@ -60,7 +60,7 @@ const services = [
     icon: Building2,
     title: "Organizational Development",
     desc: "Strategic planning, institutional strengthening and governance support for sustainable growth.",
-    image: IMAGES.teamFieldwork3,
+    image: IMAGES.servicesOrgDev,
   },
 ];
 
